@@ -5,6 +5,6 @@ import test from 'ava'
 import config from "../../src/config";
 
 test('Configuration', (t) => {
-    const conf = config(__dirname)
-    t.is(conf.context, __dirname)
+  const conf = config(__dirname)
+  t.is(conf.context, __dirname)
 })
