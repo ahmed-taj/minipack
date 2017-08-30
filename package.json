@@ -1,0 +1,35 @@
+{
+  "name": "@webhack/core",
+  "version": "0.0.0",
+  "description": "Webhack - the core Node.js module",
+  "keywords": [
+    "webhack",
+    "webpack"
+  ],
+  "license": "MIT",
+  "author": "Ahmed T. Ali <ah.tajelsir@gmail.com>",
+  "main": "./dist/src/index.js",
+  "types": "./dist/src/index.d.ts",
+  "scripts": {
+    "clean": "rimraf -rf ./dist",
+    "prepare": "npm run clean & tsc",
+    "test": "npm run prepare && ava ./dist/tests"
+  },
+  "dependencies": {
+    "webpack": "^3.5.5"
+  },
+  "engines": {
+    "node": ">=8.4.0",
+    "npm": ">=5.3.0"
+  },
+  "files": [
+    "dist/src"
+  ],
+  "devDependencies": {
+    "@types/node": "^8.0.26",
+    "@types/webpack": "^3.0.10",
+    "ava": "^0.22.0",
+    "rimraf": "^2.6.1",
+    "typescript": "^2.4.2"
+  }
+}
