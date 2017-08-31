@@ -3,6 +3,7 @@ import { resolve } from 'path'
 
 // Packages
 import { Configuration } from 'webpack'
+import HTMLWebpackPlugin = require('html-webpack-plugin')
 
 // Ours
 import { CompilerOptions } from "../types/options";
@@ -29,6 +30,13 @@ const merge = (options: CompilerOptions): Configuration => {
   // Output
   config.output.path = resolve(config.context, 'dist')
 
+  // Plugins
+  // gerenate index.html for us
+  config.plugins.push(new HTMLWebpackPlugin({
+    title: 'Webhack | Happy hacking!'
+  }))
+
+  // Let's not waste more time ;)
   return config
 }
 
