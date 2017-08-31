@@ -1,5 +1,5 @@
 // Packages
-import * as webpack from 'webpack'
+import webpack = require('webpack')
 
 // Ours
 import { merge, CompilerOptions } from './config'

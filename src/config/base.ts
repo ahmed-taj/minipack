@@ -1,6 +1,6 @@
 // Packages
 import { Configuration } from 'webpack'
-import CleanWebpackPlugin from 'clean-webpack-plugin'
+import CleanWebpackPlugin = require('clean-webpack-plugin')
 
 const Base: Configuration = {
   // Target environment
@@ -8,6 +8,14 @@ const Base: Configuration = {
 
   // Debugging
   devtool: "inline-source-map",
+
+  // Rules
+  module: {
+    rules: [
+      // CSS
+      { test: /\.css$/, loader: 'css-loader' }
+    ]
+  },
 
   // Plugins
   plugins: [
