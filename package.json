@@ -1,6 +1,6 @@
 {
   "name": "@hack-playground/core",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Hack Playground - the core Node.js module",
   "keywords": [
     "hack-playground",
