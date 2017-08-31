@@ -1,9 +1,9 @@
 {
-  "name": "@webhack/core",
+  "name": "@hack-playground/core",
   "version": "0.0.0",
-  "description": "Webhack - the core Node.js module",
+  "description": "Hack Playground - the core Node.js module",
   "keywords": [
-    "webhack",
+    "hack-playground",
     "webpack"
   ],
   "license": "MIT",

@@ -33,7 +33,7 @@ const merge = (options: CompilerOptions): Configuration => {
   // Plugins
   // gerenate index.html for us
   config.plugins.push(new HTMLWebpackPlugin({
-    title: 'Webhack | Happy hacking!'
+    title: 'Hack | enjoy!'
   }))
 
   // Let's not waste more time ;)
