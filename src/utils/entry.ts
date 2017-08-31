@@ -1,11 +1,15 @@
 // Native
-import { basename, extname } from 'path'
+import { basename, extname, join } from 'path'
 
 /**
  * General File System interface
  */
 export interface FileSystem {
   readdirSync: (dir: string) => string[]
+
+  statSync(path: string): {
+    isFile: () => boolean
+  }
 }
 
 /**
@@ -17,7 +21,12 @@ export interface FileSystem {
 const entry = (dir: string, fs: FileSystem): string => {
   // We only care about app.*
   const list = fs.readdirSync(dir)
-    .filter(f => basename(f, extname(f)) == 'app')
+    .filter(f => {
+      if (fs.statSync(join(dir, f)).isFile()) {
+        return basename(f, extname(f)) == 'app'
+      }
+      return false
+    })
 
   // We don't support multiple entries
   if (list.length > 1) {
