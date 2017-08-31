@@ -2,7 +2,7 @@
 import { basename } from 'path'
 
 // Ours
-import { FileSystem } from '../src/utils/entry'
+import { FileSystem } from '../src/types/fs'
 
 /**
  * FAKE FILE SYSTEM

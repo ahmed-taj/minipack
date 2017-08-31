@@ -1,16 +1,8 @@
 // Native
 import { basename, extname, join } from 'path'
 
-/**
- * General File System interface
- */
-export interface FileSystem {
-  readdirSync: (dir: string) => string[]
-
-  statSync(path: string): {
-    isFile: () => boolean
-  }
-}
+// Ours
+import { FileSystem } from '../types/fs'
 
 /**
  * Lookup suitable entry (app.*) file in a given directory

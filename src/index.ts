@@ -2,7 +2,8 @@
 import webpack = require('webpack')
 
 // Ours
-import { merge, CompilerOptions } from './config'
+import { CompilerOptions } from './types/options'
+import { merge } from './config'
 
 const core = (options: CompilerOptions): webpack.Compiler => {
   return webpack(merge(options))
