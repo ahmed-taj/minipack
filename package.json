@@ -16,6 +16,7 @@
     "test": "npm run prepare && ava ./dist/tests"
   },
   "dependencies": {
+    "clean-webpack-plugin": "^0.1.16",
     "webpack": "^3.5.5"
   },
   "engines": {

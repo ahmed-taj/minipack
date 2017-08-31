@@ -3,6 +3,7 @@ import { Configuration } from 'webpack'
 
 // Ours
 import { CompilerOptions } from "./options";
+import { Base } from './base'
 
 /**
  * Constructs webpack configuration object
@@ -10,9 +11,13 @@ import { CompilerOptions } from "./options";
  * @param options 
  */
 const merge = (options: CompilerOptions): Configuration => {
-  return {
-    context: options.path
-  }
+  // Copy the Base configuration
+  const config = Object.assign({}, Base)
+
+  // The base directory (absolute path!) for resolving the entry option
+  config.context = options.path
+
+  return config
 }
 
 export { merge }
