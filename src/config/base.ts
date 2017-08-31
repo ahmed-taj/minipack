@@ -9,6 +9,11 @@ const Base: Configuration = {
   // Debugging
   devtool: "inline-source-map",
 
+  // Output
+  output: {
+    filename: '[name].[chunkhash].js'
+  },
+
   // Rules
   module: {
     rules: [
