@@ -24,7 +24,7 @@ const merge = (options: CompilerOptions): Configuration => {
 
   // Entry module
   config.entry = {
-    app: `./${entry(config.context, options.fs)}`
+    app: `./${entry('app', config.context, options.fs)}`
   }
 
   // Output

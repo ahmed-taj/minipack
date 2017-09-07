@@ -6,26 +6,30 @@ import { entry } from '../../src/utils/entry'
 import { FakeFileSystem, FakeEntry } from '../helpers'
 
 // Helpers 
+const name = 'app'
 const dir = '/fake/dir'
 const fs = list => new FakeFileSystem(dir, list)
 const mapTrue = list => list.map(e => [e, true])
 const mapFalse = list => list.map(e => [e, false])
 
-test("returns only an entry that matches 'app.*'", (t) => {
-  const files: FakeEntry[] = mapTrue(['app.ts', 'appp.ts', '.app.ts'])
-  t.is(entry(dir, fs(files)), 'app.ts')
+test("returns only an entry that matches 'name.*'", (t) => {
+  t.is(entry(name, dir, fs(mapTrue(
+    ['app.ts', 'appp.ts', '.app.ts']
+  ))), 'app.ts')
 })
 
 test("throws when no entry found", (t) => {
-  let files: FakeEntry[] = []
-  t.throws(() => entry(dir, fs(files)), /No bundle entry/)
+  // Empty dir
+  t.throws(() => entry(name, dir, fs([])), /No bundle entry/)
 
-  // Not files!
-  files = mapFalse(['app', 'app.ts', 'app.js', '.app'])
-  t.throws(() => entry(dir, fs(files)), /No bundle entry/)
+  // No files
+  t.throws(() => entry(name, dir, fs(mapFalse(
+    ['app', 'app.ts', 'app.js', '.app']
+  ))), /No bundle entry/)
 })
 
 test("throws when multiple entries found", (t) => {
-  const files: FakeEntry[] = mapTrue(['app', 'app.ts'])
-  t.throws(() => entry(dir, fs(files)), /Multiple bundle/)
+  t.throws(() => entry(name, dir, fs(mapTrue(
+    ['app', 'app.ts']
+  ))), /Multiple bundle/)
 })
