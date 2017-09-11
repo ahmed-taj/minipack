@@ -67,7 +67,7 @@ const Base: Configuration = {
 
   // Plugins
   plugins: [
-    new CleanWebpackPlugin('dist')
+    new CleanWebpackPlugin('dist', { verbose: false })
   ],
 
   // Turn off performance hints during development because we don't do any
