@@ -31,7 +31,7 @@ const merge = (options: CompilerOptions): Configuration => {
   config.output.path = resolve(config.context, 'dist')
 
   // Plugins
-  // gerenate index.html for us
+  // generate index.html for us
   config.plugins.push(new HTMLWebpackPlugin({
     title: 'Hack | enjoy!'
   }))
