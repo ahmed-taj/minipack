@@ -14,7 +14,7 @@ const mapFalse = list => list.map(e => [e, false])
 
 test("returns only an entry that matches 'name.*'", (t) => {
   t.is(entry(name, dir, fs(mapTrue(
-    ['app.ts', 'appp.ts', '.app.ts']
+    ['app.ts', 'appp.ts', '.app.ts', 'src/app.ts', '../app.ts']
   ))), 'app.ts')
 })
 

@@ -1,5 +1,5 @@
 // Native
-import { basename, extname, join } from 'path'
+import { basename, extname, join, dirname } from 'path'
 
 // Ours
 import { FileSystem } from '../types/fs'
@@ -12,11 +12,11 @@ import { FileSystem } from '../types/fs'
  * @param fs 
  */
 const entry = (name: string, dir: string, fs: FileSystem): string => {
-  // We only care about name.*
+  // We only care about name.* in the root dir
   const list = fs.readdirSync(dir)
     .filter(f => {
       if (fs.statSync(join(dir, f)).isFile()) {
-        return basename(f, extname(f)) == name
+        return (basename(f, extname(f)) == name) && (dirname(f) == '.')
       }
       return false
     })
