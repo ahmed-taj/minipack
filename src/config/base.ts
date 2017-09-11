@@ -20,7 +20,10 @@ const Base: Configuration = {
       // CSS
       {
         test: /\.css$/,
-        loader: require.resolve('css-loader')
+        use: [
+          require.resolve('style-loader'),
+          require.resolve('css-loader')
+        ]
       },
       // Support ES6 (and beyond) using Babel
       {
