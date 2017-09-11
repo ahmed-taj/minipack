@@ -22,9 +22,30 @@ const Base: Configuration = {
         test: /\.css$/,
         use: [
           require.resolve('style-loader'),
-          require.resolve('css-loader')
+          {
+            loader: require.resolve('css-loader'),
+            options: { importLoaders: 1 }
+          },
+          {
+            loader: require.resolve('postcss-loader'),
+            options: {
+              sourceMap: 'inline',
+              plugins: () => [
+                require('postcss-import'),
+                require('postcss-cssnext')({
+                  browsers: [
+                    '>1%',
+                    'last 4 versions',
+                    'Firefox ESR',
+                    'not ie < 9'
+                  ]
+                })
+              ]
+            }
+          }
         ]
       },
+
       // Support ES6 (and beyond) using Babel
       {
         test: /\.(js|jsx|es)$/,
