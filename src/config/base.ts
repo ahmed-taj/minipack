@@ -2,6 +2,9 @@
 import { Configuration } from 'webpack'
 import CleanWebpackPlugin = require('clean-webpack-plugin')
 
+// Us
+import browserslist from './browserslist'
+
 const Base: Configuration = {
   // Target environment
   target: "web",
@@ -33,12 +36,7 @@ const Base: Configuration = {
               plugins: () => [
                 require('postcss-import'),
                 require('postcss-cssnext')({
-                  browsers: [
-                    '>1%',
-                    'last 4 versions',
-                    'Firefox ESR',
-                    'not ie < 9'
-                  ]
+                  browsers: browserslist
                 })
               ]
             }
@@ -54,7 +52,11 @@ const Base: Configuration = {
         options: {
           babelrc: false,
           presets: [
-            require.resolve('babel-preset-env'),
+            [require.resolve('babel-preset-env'), {
+              targets: {
+                browsers: browserslist
+              }
+            }],
             require.resolve('babel-preset-react')
           ],
           // Enables caching results in ./node_modules/.cache/babel-loader/
