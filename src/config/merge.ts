@@ -33,6 +33,9 @@ const merge = (options: CompilerOptions): Configuration => {
   // Plugins
   // generate index.html for us
   config.plugins.push(new HTMLWebpackPlugin({
+    inject: false,
+    template: require('html-webpack-template'),
+
     title: 'Hack | enjoy!'
   }))
 
