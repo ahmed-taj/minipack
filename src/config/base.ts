@@ -14,7 +14,8 @@ const Base: Configuration = {
 
   // Output
   output: {
-    filename: '[name].[chunkhash].js'
+    filename: '[name].[chunkhash].js',
+    publicPath: '/assets/'
   },
 
   // Rules
