@@ -1,60 +1,26 @@
 {
-  "name": "@hack-playground/core",
-  "version": "0.1.0",
-  "description": "Hack Playground - the core Node.js module",
-  "keywords": [
-    "hack-playground",
-    "webpack"
-  ],
+  "name": "glitchbook",
+  "version": "0.0.0",
+  "description": "Interactive playground for the modern web",
   "license": "MIT",
-  "author": "Ahmed T. Ali <ah.tajelsir@gmail.com>",
-  "files": [
-    "dist/src"
-  ],
-  "main": "./dist/src/index.js",
-  "types": "./dist/src/index.d.ts",
+  "repository": {
+    "url": "https://github.com/glitchbook/glitchbook.git"
+  },
   "scripts": {
-    "clean": "rimraf -rf ./dist",
-    "copy": "cpr ./src/template/index.html ./dist/src/template/index.html -o",
     "git": "git-cz",
     "precommit": "npm test",
-    "prepare": "npm run clean && tsc && npm run copy",
-    "test": "npm run prepare && ava ./dist/tests/**/*.test.js"
-  },
-  "dependencies": {
-    "ajv": "^5.2.2",
-    "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.2",
-    "babel-preset-env": "^1.6.0",
-    "babel-preset-react": "^6.24.1",
-    "clean-webpack-plugin": "^0.1.16",
-    "css-loader": "^0.28.7",
-    "html-webpack-plugin": "^2.30.1",
-    "postcss-cssnext": "^3.0.2",
-    "postcss-import": "^10.0.0",
-    "postcss-loader": "^2.0.6",
-    "style-loader": "^0.18.2",
-    "webpack": "^3.5.5"
-  },
-  "devDependencies": {
-    "@types/html-webpack-plugin": "^2.28.0",
-    "@types/node": "^8.0.26",
-    "@types/webpack": "^3.0.10",
-    "ava": "^0.22.0",
-    "commitizen": "^2.9.6",
-    "cpr": "^2.2.0",
-    "cz-conventional-changelog": "^2.0.0",
-    "husky": "^0.14.3",
-    "rimraf": "^2.6.1",
-    "typescript": "^2.4.2"
-  },
-  "engines": {
-    "node": ">=8.4.0",
-    "npm": ">=5.3.0"
+    "prepare": "lerna bootstrap",
+    "test": "lerna run test"
   },
   "config": {
     "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
+      "path": "./node_modules/cz-lerna-changelog"
     }
+  },
+  "devDependencies": {
+    "commitizen": "^2.9.6",
+    "cz-lerna-changelog": "^1.2.1",
+    "husky": "^0.14.3",
+    "lerna": "^2.1.2"
   }
 }

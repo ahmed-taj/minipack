@@ -1,0 +1,51 @@
+{
+  "name": "@glitchbook/lib",
+  "version": "0.1.0",
+  "description": "glitch book - the core Node.js module",
+  "keywords": [
+    "glitch-book",
+    "webpack"
+  ],
+  "license": "MIT",
+  "author": "Ahmed T. Ali <ah.tajelsir@gmail.com>",
+  "files": [
+    "dist/src"
+  ],
+  "main": "./dist/src/index.js",
+  "types": "./dist/src/index.d.ts",
+  "scripts": {
+    "clean": "rimraf -rf ./dist",
+    "copy": "cpr ./src/template/index.html ./dist/src/template/index.html -o",
+    "git": "cd .. && npm run git",
+    "prepare": "npm run clean -s && tsc && npm run copy -s",
+    "test": "npm run prepare -s && ava ./dist/tests/**/*.test.js"
+  },
+  "dependencies": {
+    "ajv": "^5.2.2",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-react": "^6.24.1",
+    "clean-webpack-plugin": "^0.1.16",
+    "css-loader": "^0.28.7",
+    "html-webpack-plugin": "^2.30.1",
+    "postcss-cssnext": "^3.0.2",
+    "postcss-import": "^10.0.0",
+    "postcss-loader": "^2.0.6",
+    "style-loader": "^0.18.2",
+    "webpack": "^3.5.5"
+  },
+  "devDependencies": {
+    "@types/html-webpack-plugin": "^2.28.0",
+    "@types/node": "^8.0.26",
+    "@types/webpack": "^3.0.10",
+    "ava": "^0.22.0",
+    "cpr": "^2.2.0",
+    "rimraf": "^2.6.1",
+    "typescript": "^2.4.2"
+  },
+  "engines": {
+    "node": ">=8.4.0",
+    "npm": ">=5.3.0"
+  }
+}
