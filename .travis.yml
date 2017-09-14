@@ -8,13 +8,13 @@ cache:
   directories:
     - node_modules
 
+git:
+  depth: 1
+
 notifications:
   email: false
 
-before_install: .travis/before_install.sh
-after_success: .travis/after_success.sh
-
 script: npm test
 
-git:
-  depth: 1
+# Enable this when we want to publish v1.0.0
+# after_success: npm run semantic-release -s

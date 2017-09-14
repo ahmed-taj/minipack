@@ -1,6 +1,6 @@
 {
   "name": "@glitchbook/remove-junks-plugin",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "glitch book - A webpack plugin to remove junk chunk's files",
   "keywords": [
     "glitch-book",

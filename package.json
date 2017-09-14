@@ -1,6 +1,6 @@
 {
   "name": "glitchbook",
-  "version": "0.0.0",
+  "version": "0.0.0-semver",
   "description": "An interactive playground for the modern web",
   "license": "MIT",
   "repository": {
@@ -10,19 +10,19 @@
     "git": "git-cz",
     "precommit": "npm test -s",
     "prepare": "lerna bootstrap",
-    "semantic-release": "lerna-semantic-release pre && lerna-semantic-release post && lerna-semantic-release perform",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
     "test": "lerna run test"
   },
   "config": {
     "commitizen": {
-      "path": "./node_modules/cz-lerna-changelog"
+      "path": "./node_modules/cz-conventional-changelog"
     }
   },
   "devDependencies": {
     "commitizen": "^2.9.6",
-    "cz-lerna-changelog": "^1.2.1",
+    "cz-conventional-changelog": "^2.0.0",
     "husky": "^0.14.3",
     "lerna": "^2.1.2",
-    "lerna-semantic-release": "^9.1.0"
+    "semantic-release": "^7.0.2"
   }
 }
