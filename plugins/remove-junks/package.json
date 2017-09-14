@@ -1,0 +1,39 @@
+{
+  "name": "@glitchbook/remove-junks-plugin",
+  "version": "0.0.0",
+  "description": "glitch book - A webpack plugin to remove junk chunk's files",
+  "keywords": [
+    "glitch-book",
+    "webpack"
+  ],
+  "license": "MIT",
+  "author": "Ahmed T. Ali <ah.tajelsir@gmail.com>",
+  "files": [
+    "dist/src"
+  ],
+  "main": "./dist/src/index.js",
+  "types": "./dist/src/index.d.ts",
+  "scripts": {
+    "clean": "rimraf -rf ./dist",
+    "copy": "cpr ./tests/cases ./dist/tests/cases -o",
+    "git": "cd ../.. && npm run git",
+    "prepare": "npm run clean -s && tsc && npm run copy -s",
+    "test": "npm run prepare -s && ava ./dist/tests/integration.test.js"
+  },
+  "dependencies": {
+    "ajv": "^5.2.2",
+    "webpack": "^3.5.5"
+  },
+  "devDependencies": {
+    "@types/node": "^8.0.26",
+    "@types/webpack": "^3.0.10",
+    "ava": "^0.22.0",
+    "cpr": "^2.2.0",
+    "rimraf": "^2.6.1",
+    "typescript": "^2.4.2"
+  },
+  "engines": {
+    "node": ">=8.4.0",
+    "npm": ">=5.3.0"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "declaration": true,
+    "sourceMap": true,
+    "moduleResolution": "node",
+    "lib": [
+      "es6",
+      "es7"
+    ],
+    "target": "es2015",
+    "outDir": "./dist"
+  },
+  "include": [
+    "src/**/*.ts",
+    "tests"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
