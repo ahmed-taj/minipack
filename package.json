@@ -1,14 +1,14 @@
 {
   "name": "glitchbook",
   "version": "0.0.0",
-  "description": "Interactive playground for the modern web",
+  "description": "An interactive playground for the modern web",
   "license": "MIT",
   "repository": {
     "url": "https://github.com/glitchbook/glitchbook.git"
   },
   "scripts": {
     "git": "git-cz",
-    "precommit": "npm test",
+    "precommit": "npm test -s",
     "prepare": "lerna bootstrap",
     "test": "lerna run test"
   },
