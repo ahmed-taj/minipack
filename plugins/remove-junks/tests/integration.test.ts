@@ -31,8 +31,11 @@ testCases.filter(tc => {
     }
 
     // Assert output
-    // We only cares about file names
-    t.deepEqual(fs.readdirSync(expectDir), fs.readdirSync(outDir))
+    // We ignore .gitkeep files because we only add them to make sure they get
+    // committed even if they are empty
+    const expected = fs.readdirSync(expectDir).filter(f => f != '.gitkeep')
+    const actual = fs.readdirSync(outDir)
+    t.deepEqual(expected, actual)
   })
 })
 
