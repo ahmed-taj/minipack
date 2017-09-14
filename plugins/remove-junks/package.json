@@ -9,7 +9,8 @@
   "license": "MIT",
   "author": "Ahmed T. Ali <ah.tajelsir@gmail.com>",
   "files": [
-    "dist/src"
+    "dist/src",
+    "README.md"
   ],
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",
