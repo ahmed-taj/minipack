@@ -14,6 +14,7 @@ import { Base } from './base'
  * Constructs webpack configuration object
  *
  * @param options 
+ * @private
  */
 const merge = (options: CompilerOptions): Configuration => {
   // Copy the Base configuration

@@ -1,5 +1,6 @@
 /**
  * A browserslist compatible string to be used in both CSS & JS preprocessing
+ * @private
  */
 export default [
   '>1%',

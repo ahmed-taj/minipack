@@ -9,15 +9,17 @@
   "license": "MIT",
   "author": "Ahmed T. Ali <ah.tajelsir@gmail.com>",
   "files": [
-    "dist/src"
+    "dist/src",
+    "README.md"
   ],
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",
   "scripts": {
     "clean": "rimraf -rf ./dist",
     "copy": "cpr ./src/template/index.html ./dist/src/template/index.html -o",
+    "doc": "documentation readme ./dist/src/index.js --section=API",
     "git": "cd .. && npm run git",
-    "prepare": "npm run clean -s && tsc && npm run copy -s",
+    "prepare": "npm run clean -s && tsc && npm run copy -s && npm run doc -s",
     "test": "npm run prepare -s && ava ./dist/tests/**/*.test.js"
   },
   "dependencies": {
@@ -41,6 +43,7 @@
     "@types/webpack": "^3.0.10",
     "ava": "^0.22.0",
     "cpr": "^2.2.0",
+    "documentation": "^5.3.2",
     "rimraf": "^2.6.1",
     "typescript": "^2.4.2"
   },

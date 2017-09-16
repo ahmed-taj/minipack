@@ -10,6 +10,7 @@ import { FileSystem } from '../types/fs'
  * @param name 
  * @param dir 
  * @param fs 
+ * @private
  */
 const entry = (name: string, dir: string, fs: FileSystem): string => {
   // We only care about name.* in the root dir
