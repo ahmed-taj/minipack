@@ -7,6 +7,7 @@
     "url": "https://github.com/glitchbook/glitchbook.git"
   },
   "scripts": {
+    "commitmsg": "commitlint -e",
     "git": "git-cz",
     "precommit": "npm test -s",
     "prepare": "lerna bootstrap",
