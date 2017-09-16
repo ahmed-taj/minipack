@@ -1,0 +1,42 @@
+{
+  "name": "@glitchbook/sudo-entry",
+  "version": "0.0.0-semver",
+  "description": "glitch book - A webpack loader that generates an entry by requiring the given resources",
+  "keywords": [
+    "glitch-book",
+    "webpack"
+  ],
+  "license": "MIT",
+  "author": "Ahmed T. Ali <ah.tajelsir@gmail.com>",
+  "files": [
+    "dist/src",
+    "README.md"
+  ],
+  "main": "./dist/src/index.js",
+  "types": "./dist/src/index.d.ts",
+  "scripts": {
+    "clean": "rimraf -rf ./dist",
+    "git": "cd ../.. && npm run git -s",
+    "prepare": "npm run clean -s && tsc",
+    "test": "npm run prepare -s && ava ./dist/tests/**/*.test.js"
+  },
+  "dependencies": {
+    "loader-utils": "^1.1.0"
+  },
+  "devDependencies": {
+    "@types/loader-runner": "^2.2.3",
+    "@types/loader-utils": "^1.1.0",
+    "@types/node": "^8.0.26",
+    "ava": "^0.22.0",
+    "loader-runner": "^2.3.0",
+    "rimraf": "^2.6.1",
+    "typescript": "^2.4.2"
+  },
+  "engines": {
+    "node": ">=8.4.0",
+    "npm": ">=5.3.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

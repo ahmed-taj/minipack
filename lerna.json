@@ -2,7 +2,7 @@
   "lerna": "2.1.2",
   "packages": [
     "./lib",
-    "./tools/*",
+    "./utils/*",
     "./plugins/*"
   ],
   "version": "0.1.0"
