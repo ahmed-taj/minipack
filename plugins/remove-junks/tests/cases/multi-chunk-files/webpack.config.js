@@ -1,7 +1,4 @@
-const { join } = require('path')
-
-const root = join(__dirname, '..', '..', '..')
-const { RemoveJunksPlugin } = require(join(root, 'src'))
+const { RemoveJunksPlugin } = require('../../../src')
 
 module.exports = {
   entry: {
