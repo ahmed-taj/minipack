@@ -3,6 +3,7 @@ import { Configuration } from 'webpack'
 import CleanWebpackPlugin = require('clean-webpack-plugin')
 
 // Us
+import { BUILD_DIR } from './globals'
 import browserslist from './browserslist'
 
 const Base: Configuration = {
@@ -69,7 +70,7 @@ const Base: Configuration = {
 
   // Plugins
   plugins: [
-    new CleanWebpackPlugin('dist', { verbose: false })
+    new CleanWebpackPlugin(BUILD_DIR, { verbose: false })
   ],
 
   // Turn off performance hints during development because we don't do any

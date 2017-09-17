@@ -9,6 +9,7 @@ import HTMLWebpackPlugin = require('html-webpack-plugin')
 import { CompilerOptions } from "../types/options";
 import { makeEntries } from '../utils/entry'
 import { Base } from './base'
+import { BUILD_DIR, DEFAULT_PUBLIC_PATH, INDEX_TITLE } from './globals'
 
 /**
  * Constructs webpack configuration object
@@ -27,15 +28,17 @@ const merge = (options: CompilerOptions): Configuration => {
   config.entry = makeEntries(config.context, options.fs)
 
   // Output
-  config.output.path = resolve(config.context, 'dist')
-  config.output.publicPath = options.publicPath || '/assets/'
+  config.output.path = resolve(config.context, BUILD_DIR)
+  config.output.publicPath = options.publicPath || DEFAULT_PUBLIC_PATH
 
   // Plugins
-  // generate 'index.html' for us
-  config.plugins.push(new HTMLWebpackPlugin({
-    template: resolve(__dirname, '..', 'template', 'index.html'),
-    title: 'Glitch Book | enjoy!'
-  }))
+  config.plugins.concat([
+    // generate 'index.html' for us
+    new HTMLWebpackPlugin({
+      template: resolve(__dirname, '..', 'template', 'index.html'),
+      title: INDEX_TITLE
+    })
+  ])
 
   // Let's not waste more time ;)
   return config
