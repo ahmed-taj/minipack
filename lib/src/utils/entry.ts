@@ -29,18 +29,6 @@ const entry = (name: string, dir: string, fs: FileSystem): string[] => {
 /**
  * Generates webpack entries based on directory contents
  * 
- * Scenarios:
- * 1. `app.[ext]`   => glitch entry only
- * 2. `index.[ext]` => assets entry only
- * 3. `style.[ext]` => assets entry only
- * 
- * 4. `index.[ext]` + `style.[ext]` => assets entry only
- * 5. `app.[ext]` + `index.[ext]`   => glitch + assets entries
- * 6. `app.[ext]` + `style.[ext]`   => glitch + assets entries
- * 
- * 7. `app.[ext]` + `index.[ext]` + `style.[ext]` => glitch + assets entries
- * 8. none => none
- * 
  * @param dir 
  * @return {Entry}
  * @private
@@ -49,6 +37,10 @@ const makeEntries = (dir: string, fs: FileSystem): Entry => {
   // NOTE: names are case-sensitive
   const names = ['app', 'index', 'style']
   const files = {}
+  const entries = {}
+
+  // Our sudo entry loader :)
+  const sudo = require.resolve('@glitchbook/sudo-entry')
 
   // Get entry for each name
   names.forEach(name => {
@@ -56,23 +48,19 @@ const makeEntries = (dir: string, fs: FileSystem): Entry => {
     if (files[name].length > 1) {
       return new Error(`Multiple ${name}.[ext] entries found in '${dir}' root`)
     }
+
+    // Determine which bundles we need
+    if (files[name].length == 1) {
+      if (name == 'app') {
+        // Just point to the entry file as usual webpack config
+        entries[name] = `./${files['app'].pop()}`
+      } else {
+        // Use sudo-entry loader here to generate a suitable code dynamically
+        entries[name] = `${sudo}?include[]=./${files[name].pop()}!`
+      }
+    }
   })
 
-  const entries = {}
-  // Do we need `glitch` bundle?
-  if (files['app'].length == 1) {
-    entries['glitch'] = `./${files['app'].pop()}`
-  }
-  // eg: ('a','b') => 'include[]=./a,include[]=./b'
-  const query = files['index']
-    .concat(files['style'])
-    .map(f => `include[]=./${f}`)
-    .join(',')
-
-  if (query) {
-    // Use sudo-entry loader to generate an entry code
-    entries['static'] = `${require.resolve('@glitchbook/sudo-entry')}?${query}!`
-  }
   return entries
 }
 

@@ -9,32 +9,41 @@ test('makes nothing when no entries', t => {
   t.deepEqual(makeEntries(dir, fs(mapTrue([]))), {})
 })
 
-test('makes both `glitch` & `static` when possible', t => {
-  t.deepEqual(Object.keys(makeEntries(dir, fs(mapTrue(
-    ['app.ext', 'index.ext']
-  )))), ['glitch', 'static'])
-
-  t.deepEqual(Object.keys(makeEntries(dir, fs(mapTrue(
-    ['app.ext', 'style.ext']
-  )))), ['glitch', 'static'])
-
+test('makes `app`, `index` and `style` when possible', t => {
   t.deepEqual(Object.keys(makeEntries(dir, fs(mapTrue(
     ['app.ext', 'index.ext', 'style.ext']
-  )))), ['glitch', 'static'])
+  )))), ['app', 'index', 'style'])
 })
 
-test('does not make `static` entry when no statics', t => {
+test('only makes necessary entries', t => {
+  // Only app.[ext]
   t.deepEqual(Object.keys(makeEntries(dir, fs(mapTrue(
     ['app.ext']
-  )))), ['glitch'])
-})
+  )))), ['app'])
 
-test('does not make `glitch` entry when no app.[ext] file', t => {
+  // Only index.[ext]
   t.deepEqual(Object.keys(makeEntries(dir, fs(mapTrue(
     ['index.ext']
-  )))), ['static'])
+  )))), ['index'])
 
+  // Only style.[ext]
   t.deepEqual(Object.keys(makeEntries(dir, fs(mapTrue(
     ['style.ext']
-  )))), ['static'])
+  )))), ['style'])
+
+  // Both app.[ext] & index.[ext]
+  t.deepEqual(Object.keys(makeEntries(dir, fs(mapTrue(
+    ['app.ext', 'index.ext']
+  )))), ['app', 'index'])
+
+  // Both app.[ext] & style.[ext]
+  t.deepEqual(Object.keys(makeEntries(dir, fs(mapTrue(
+    ['app.ext', 'style.ext']
+  )))), ['app', 'style'])
+
+  // Both index.[ext] & style.[ext]
+  t.deepEqual(Object.keys(makeEntries(dir, fs(mapTrue(
+    ['index.ext', 'style.ext']
+  )))), ['index', 'style'])
 })
+
