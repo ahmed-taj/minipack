@@ -7,6 +7,9 @@ interface CompilerOptions {
 
   // The file system to be used for reading
   fs: FileSystem
+
+  // Public path
+  publicPath?: string
 }
 
 export { CompilerOptions }

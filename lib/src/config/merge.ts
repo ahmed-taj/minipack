@@ -28,6 +28,7 @@ const merge = (options: CompilerOptions): Configuration => {
 
   // Output
   config.output.path = resolve(config.context, 'dist')
+  config.output.publicPath = options.publicPath || '/assets/'
 
   // Plugins
   // generate 'index.html' for us
