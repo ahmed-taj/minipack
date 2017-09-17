@@ -1,5 +1,5 @@
 // Packages
-import { Compiler, Plugin } from 'webpack'
+import { Plugin } from 'webpack'
 
 /**
  * A webpack plugin to remove junk chunk's files
@@ -7,7 +7,7 @@ import { Compiler, Plugin } from 'webpack'
 class RemoveJunksPlugin implements Plugin {
   constructor(private chunks: string[]) { }
 
-  apply(compiler: Compiler) {
+  apply(compiler) {
     compiler.plugin('emit', (compilation, callback) => {
 
       // filter chunks
