@@ -78,3 +78,6 @@ typings/
 
 # dotenv environment variables file
 .env
+
+# Sometimes you write a temporary TODO file you don't want to share
+TODO.md

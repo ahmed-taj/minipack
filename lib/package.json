@@ -19,10 +19,11 @@
     "copy": "cpr ./src/template/index.html ./dist/src/template/index.html -o",
     "doc": "documentation readme ./dist/src/index.js --section=API",
     "git": "cd .. && npm run git",
-    "prepare": "npm run clean -s && tsc && npm run copy -s && npm run doc -s",
+    "prepare": "npm run clean -s && tsc && npm run copy -s",
     "test": "npm run prepare -s && ava ./dist/tests/**/*.test.js"
   },
   "dependencies": {
+    "@glitchbook/sudo-entry": "0.0.0-semver",
     "ajv": "^5.2.2",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",

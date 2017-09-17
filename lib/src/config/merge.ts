@@ -7,7 +7,7 @@ import HTMLWebpackPlugin = require('html-webpack-plugin')
 
 // Ours
 import { CompilerOptions } from "../types/options";
-import { entry } from '../utils/entry'
+import { makeEntries } from '../utils/entry'
 import { Base } from './base'
 
 /**
@@ -24,18 +24,16 @@ const merge = (options: CompilerOptions): Configuration => {
   config.context = options.path
 
   // Entry module
-  config.entry = {
-    app: `./${entry('app', config.context, options.fs)}`
-  }
+  config.entry = makeEntries(config.context, options.fs)
 
   // Output
   config.output.path = resolve(config.context, 'dist')
 
   // Plugins
-  // generate index.html for us
+  // generate 'index.html' for us
   config.plugins.push(new HTMLWebpackPlugin({
     template: resolve(__dirname, '..', 'template', 'index.html'),
-    title: 'Hack | enjoy!'
+    title: 'Glitch Book | enjoy!'
   }))
 
   // Let's not waste more time ;)
