@@ -9,6 +9,7 @@ import HTMLWebpackPlugin = require('html-webpack-plugin')
 // Us
 import { BUILD_DIR, INDEX_TITLE } from './globals'
 import { CSS_RULES } from './support/css'
+import { HTML_RULES } from './support/html'
 import { JS_RULES } from './support/js'
 
 const Base: Configuration = {
@@ -27,6 +28,7 @@ const Base: Configuration = {
   module: {
     rules: [
       ...CSS_RULES,
+      ...HTML_RULES,
       ...JS_RULES
     ]
   },
