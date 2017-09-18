@@ -8,7 +8,6 @@ import HTMLWebpackPlugin = require('html-webpack-plugin')
 
 // Us
 import { BUILD_DIR, INDEX_TITLE } from './globals'
-import browserslist from './browserslist'
 import { CSS_RULES } from './support/css'
 import { JS_RULES } from './support/js'
 
