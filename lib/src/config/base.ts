@@ -5,6 +5,8 @@ import { resolve } from 'path'
 import { Configuration } from 'webpack'
 import CleanWebpackPlugin = require('clean-webpack-plugin')
 import HTMLWebpackPlugin = require('html-webpack-plugin')
+import ExtractTextPlugin = require('extract-text-webpack-plugin')
+import { MergeHTMLPlugin } from '@glitchbook/merge-html-plugin'
 
 // Us
 import { BUILD_DIR, INDEX_TITLE } from './globals'
@@ -38,11 +40,17 @@ const Base: Configuration = {
     // First of all, let's remove the build dir
     new CleanWebpackPlugin(BUILD_DIR, { verbose: false }),
 
+    // Save extracted index.[ext] for later use
+    new ExtractTextPlugin('USER.html'),
+
     // generate 'index.html' for us
     new HTMLWebpackPlugin({
       template: resolve(__dirname, '..', 'template', 'index.html'),
       title: INDEX_TITLE
-    })
+    }),
+
+    // Merge 'USER.html' to the generated 'index.html'
+    new MergeHTMLPlugin('USER.html')
   ],
 
   // Turn off performance hints during development because we don't do any

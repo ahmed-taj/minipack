@@ -3,10 +3,11 @@ import { resolve } from 'path'
 
 // Packages
 import { Configuration } from 'webpack'
+import ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 // Ours
 import { CompilerOptions } from "../types/options";
-import { makeEntries } from '../utils/entry'
+import { makeEntries, entry } from '../utils/entry'
 import { Base } from './base'
 import { BUILD_DIR, DEFAULT_PUBLIC_PATH } from './globals'
 
@@ -29,6 +30,17 @@ const merge = (options: CompilerOptions): Configuration => {
   // Output
   config.output.path = resolve(config.context, BUILD_DIR)
   config.output.publicPath = options.publicPath || DEFAULT_PUBLIC_PATH
+
+  // Extract index.[ext] rule
+  const index = entry('index', config.context, options.fs)
+  if (index.length == 1) {
+    config.module['rules'].unshift({
+      test: resolve(config.context, index.pop()),
+      use: ExtractTextPlugin.extract({
+        use: [require.resolve('html-loader')]
+      })
+    })
+  }
 
   // Let's not waste more time ;)
   return config
