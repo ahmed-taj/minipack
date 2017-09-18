@@ -9,6 +9,8 @@ import HTMLWebpackPlugin = require('html-webpack-plugin')
 // Us
 import { BUILD_DIR, INDEX_TITLE } from './globals'
 import browserslist from './browserslist'
+import { CSS_RULES } from './support/css'
+import { JS_RULES } from './support/js'
 
 const Base: Configuration = {
   // Target environment
@@ -25,50 +27,8 @@ const Base: Configuration = {
   // Rules
   module: {
     rules: [
-      // CSS
-      {
-        test: /\.css$/,
-        use: [
-          require.resolve('style-loader'),
-          {
-            loader: require.resolve('css-loader'),
-            options: { importLoaders: 1 }
-          },
-          {
-            loader: require.resolve('postcss-loader'),
-            options: {
-              sourceMap: 'inline',
-              plugins: () => [
-                require('postcss-import'),
-                require('postcss-cssnext')({
-                  browsers: browserslist
-                })
-              ]
-            }
-          }
-        ]
-      },
-
-      // Support ES6 (and beyond) using Babel
-      {
-        test: /\.(js|jsx|es)$/,
-        loader: require.resolve('babel-loader'),
-        exclude: /(node_modules|bower_components)/,
-        options: {
-          babelrc: false,
-          presets: [
-            [require.resolve('babel-preset-env'), {
-              targets: {
-                browsers: browserslist
-              }
-            }],
-            require.resolve('babel-preset-react')
-          ],
-          // Enables caching results in ./node_modules/.cache/babel-loader/
-          // directory for faster rebuilds.
-          cacheDirectory: true
-        }
-      }
+      ...CSS_RULES,
+      ...JS_RULES
     ]
   },
 
