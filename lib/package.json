@@ -24,6 +24,7 @@
   },
   "dependencies": {
     "@glitchbook/merge-html-plugin": "0.0.0-semver",
+    "@glitchbook/remove-junks-plugin": "0.0.0-semver",
     "@glitchbook/sudo-entry": "0.0.0-semver",
     "ajv": "^5.2.2",
     "babel-core": "^6.26.0",

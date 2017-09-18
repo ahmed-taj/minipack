@@ -7,6 +7,7 @@ import CleanWebpackPlugin = require('clean-webpack-plugin')
 import HTMLWebpackPlugin = require('html-webpack-plugin')
 import ExtractTextPlugin = require('extract-text-webpack-plugin')
 import { MergeHTMLPlugin } from '@glitchbook/merge-html-plugin'
+import { RemoveJunksPlugin } from '@glitchbook/remove-junks-plugin'
 
 // Us
 import { BUILD_DIR, INDEX_TITLE } from './globals'
@@ -46,11 +47,15 @@ const Base: Configuration = {
     // generate 'index.html' for us
     new HTMLWebpackPlugin({
       template: resolve(__dirname, '..', 'template', 'index.html'),
-      title: INDEX_TITLE
+      title: INDEX_TITLE,
+      chunks: ['app', 'style']
     }),
 
     // Merge 'USER.html' to the generated 'index.html'
-    new MergeHTMLPlugin('USER.html')
+    new MergeHTMLPlugin('USER.html'),
+
+    // Remove 'index' bundle, we don't need it anymore
+    new RemoveJunksPlugin(['index'])
   ],
 
   // Turn off performance hints during development because we don't do any
