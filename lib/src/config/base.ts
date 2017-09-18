@@ -1,9 +1,13 @@
+// Native 
+import { resolve } from 'path'
+
 // Packages
 import { Configuration } from 'webpack'
 import CleanWebpackPlugin = require('clean-webpack-plugin')
+import HTMLWebpackPlugin = require('html-webpack-plugin')
 
 // Us
-import { BUILD_DIR } from './globals'
+import { BUILD_DIR, INDEX_TITLE } from './globals'
 import browserslist from './browserslist'
 
 const Base: Configuration = {
@@ -70,7 +74,14 @@ const Base: Configuration = {
 
   // Plugins
   plugins: [
-    new CleanWebpackPlugin(BUILD_DIR, { verbose: false })
+    // First of all, let's remove the build dir
+    new CleanWebpackPlugin(BUILD_DIR, { verbose: false }),
+
+    // generate 'index.html' for us
+    new HTMLWebpackPlugin({
+      template: resolve(__dirname, '..', 'template', 'index.html'),
+      title: INDEX_TITLE
+    })
   ],
 
   // Turn off performance hints during development because we don't do any
