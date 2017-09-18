@@ -1,5 +1,5 @@
 // Packages
-import { Compiler } from 'webpack'
+import { Plugin } from 'webpack'
 
 // Us
 import { merge } from './merge'
@@ -8,10 +8,10 @@ import { merge } from './merge'
  * An extension plugin for html-webpack-plugin to enable injection of custom 
  * HTML string from an asset
  */
-class MergeHTMLPlugin {
+class MergeHTMLPlugin implements Plugin {
   constructor(private file: string) { }
 
-  apply(compiler: Compiler) {
+  apply(compiler) {
     compiler.plugin('compilation', compilation => {
 
       // Before HTML processing is the prefect time for us, because we won't 
