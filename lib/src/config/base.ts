@@ -46,7 +46,7 @@ const Base: Configuration = {
 
     // generate 'index.html' for us
     new HTMLWebpackPlugin({
-      template: resolve(__dirname, '..', 'template', 'index.html'),
+      template: resolve(__dirname, '..', 'template', 'index.ejs'),
       title: INDEX_TITLE,
       chunks: ['app', 'style']
     }),

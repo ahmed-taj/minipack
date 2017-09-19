@@ -16,7 +16,7 @@
   "types": "./dist/src/index.d.ts",
   "scripts": {
     "clean": "rimraf -rf ./dist",
-    "copy": "cpr ./src/template/index.html ./dist/src/template/index.html -o",
+    "copy": "cpr ./src/template/index.ejs ./dist/src/template/index.ejs -o",
     "doc": "documentation readme ./dist/src/index.js --section=API",
     "git": "cd .. && npm run git",
     "prepare": "npm run clean -s && tsc && npm run copy -s",
