@@ -29,11 +29,13 @@ const Base: Configuration = {
 
   // Rules
   module: {
-    rules: [
-      ...CSS_RULES,
-      ...HTML_RULES,
-      ...JS_RULES
-    ]
+    rules: [{
+      oneOf: [
+        ...CSS_RULES,
+        ...HTML_RULES,
+        ...JS_RULES
+      ]
+    }]
   },
 
   // Plugins

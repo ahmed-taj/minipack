@@ -34,7 +34,7 @@ const merge = (options: CompilerOptions): Configuration => {
   // Extract index.[ext] rule
   const index = entry('index', config.context, options.fs)
   if (index.length == 1) {
-    config.module['rules'].unshift({
+    config.module['rules'][0]['oneOf'].unshift({
       test: resolve(config.context, index.pop()),
       use: ExtractTextPlugin.extract({
         use: [require.resolve('html-loader')]
