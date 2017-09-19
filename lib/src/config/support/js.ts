@@ -4,7 +4,7 @@ import { Rule } from 'webpack'
 // Us
 import browserslist from '../browserslist'
 
-export const JS_RULES: Rule[] = [
+export const JS_RULES = (): Rule[] => [
   // ES6 (and beyond) support
   {
     test: /\.(js|jsx|es)$/,

@@ -2,7 +2,7 @@
 import { resolve } from 'path'
 
 // Packages
-import { Configuration } from 'webpack'
+import { Configuration, Entry } from 'webpack'
 import CleanWebpackPlugin = require('clean-webpack-plugin')
 import HTMLWebpackPlugin = require('html-webpack-plugin')
 import ExtractTextPlugin = require('extract-text-webpack-plugin')
@@ -15,29 +15,32 @@ import { BUILD_DIR, INDEX_TITLE, DEFAULT_PUBLIC_PATH } from './globals'
 import { CSS_RULES } from './support/css'
 import { HTML_RULES } from './support/html'
 import { JS_RULES } from './support/js'
-import { makeEntries, entry } from '../utils/entry'
+import { entry, makeEntries, extractName } from '../utils/entry'
 
-
-// {
-//   test: resolve(config.context, index.pop()),
-//   use: ExtractTextPlugin.extract({
-//     use: [require.resolve('html-loader')]
-//   })
-// }
 /**
  * Constructs webpack configuration object
  *
  * @private
  */
 class Config {
-  constructor(private options: CompilerOptions) { }
+  private entries: Entry
+  private indexFile: string
+
+  constructor(private options: CompilerOptions) {
+    // webpack entries
+    this.entries = makeEntries(this.options.path, this.options.fs)
+
+    // Do we have index.[ext] template?
+    this.indexFile = null
+    if (this.entries['index']) {
+      this.indexFile = extractName(this.entries['index'] as string)
+    }
+  }
 
   generate(): Configuration {
-    const indexFiles = entry('index', this.options.path, this.options.fs)
-    const index = indexFiles.length == 1 ? indexFiles.pop() : []
     return {
       // Entries
-      entry: makeEntries(this.options.path, this.options.fs),
+      entry: this.entries,
 
       // Output(s)
       output: {
@@ -55,10 +58,9 @@ class Config {
       module: {
         rules: [{
           oneOf: [
-            ...index,
-            ...CSS_RULES,
-            ...HTML_RULES,
-            ...JS_RULES
+            ...HTML_RULES(this.indexFile),
+            ...CSS_RULES(),
+            ...JS_RULES()
           ]
         }]
       },

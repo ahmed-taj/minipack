@@ -9,7 +9,7 @@ const baseRule = [
   { loader: require.resolve('css-loader'), options: { importLoaders: 1 } }
 ]
 
-export const CSS_RULES: Rule[] = [
+export const CSS_RULES = (): Rule[] => [
   // CSS
   {
     test: /\.css$/,
