@@ -1,6 +1,6 @@
 {
   "name": "@glitchbook/lib",
-  "version": "0.0.0-semver",
+  "version": "1.0.0",
   "description": "glitch book - the core Node.js module",
   "keywords": [
     "glitch-book",
@@ -23,9 +23,9 @@
     "test": "npm run prepare -s && ava ./dist/tests/**/*.test.js"
   },
   "dependencies": {
-    "@glitchbook/merge-html-plugin": "0.0.0-semver",
-    "@glitchbook/remove-junks-plugin": "0.0.0-semver",
-    "@glitchbook/sudo-entry": "0.0.0-semver",
+    "@glitchbook/merge-html-plugin": "^1.0.0",
+    "@glitchbook/remove-junks-plugin": "^1.0.0",
+    "@glitchbook/sudo-entry": "^1.0.0",
     "ajv": "^5.2.2",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
