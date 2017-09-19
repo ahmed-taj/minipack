@@ -2,13 +2,14 @@
 import test from 'ava'
 
 // Ours
-import { merge } from "../../src/config";
+import { Config } from "../../src/config";
 import { FakeFileSystem } from '../helpers'
 
 test('Configuration', (t) => {
-  const conf = merge({
+  const conf = new Config({
     path: __dirname,
     fs: new FakeFileSystem('/fake/dir', [['app.js', true]])
-  })
+  }).generate()
+
   t.is(conf.context, __dirname)
 })

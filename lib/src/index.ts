@@ -3,7 +3,7 @@ import webpack = require('webpack')
 
 // Ours
 import { CompilerOptions } from './types/options'
-import { merge } from './config'
+import { Config } from './config'
 
 /**
  * Generates a suitable webpack configuration object internally based on the 
@@ -24,7 +24,7 @@ import { merge } from './config'
  * @return {webpack.Compiler} instance
  */
 const prepare = (options: CompilerOptions): webpack.Compiler => {
-  return webpack(merge(options))
+  return webpack(new Config(options).generate())
 }
 
 export { prepare }
