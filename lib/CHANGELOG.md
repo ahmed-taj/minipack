@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.0.1"></a>
+## [1.0.1](https://github.com/glitchbook/glitchbook/compare/v1.0.0...v1.0.1) (2017-09-19)
+
+
+### Bug Fixes
+
+* **lib:** HTML extraction ([e1801ea](https://github.com/glitchbook/glitchbook/commit/e1801ea))
+* **lib:** index page template extension ([6ed3acd](https://github.com/glitchbook/glitchbook/commit/6ed3acd))
+* **lib:** resolve build directory ([32d3bd1](https://github.com/glitchbook/glitchbook/commit/32d3bd1))
+
+
+
+
 <a name="1.0.0"></a>
 # 1.0.0 (2017-09-19)
 

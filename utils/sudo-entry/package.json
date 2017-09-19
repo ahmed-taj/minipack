@@ -1,6 +1,6 @@
 {
   "name": "@glitchbook/sudo-entry",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "glitch book - A webpack loader that generates an entry by requiring the given resources",
   "keywords": [
     "glitch-book",
