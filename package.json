@@ -8,10 +8,10 @@
   },
   "scripts": {
     "commitmsg": "commitlint -e",
+    "lerna:publish": "lerna publish --conventional-commits",
     "git": "git-cz",
     "precommit": "npm test -s",
     "prepare": "lerna bootstrap",
-    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
     "test": "lerna run test"
   },
   "config": {
@@ -26,7 +26,6 @@
     "commitizen": "^2.9.6",
     "cz-conventional-changelog": "^2.0.0",
     "husky": "^0.14.3",
-    "lerna": "^2.1.2",
-    "semantic-release": "^7.0.2"
+    "lerna": "^2.1.2"
   }
 }
