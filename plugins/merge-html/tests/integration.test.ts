@@ -9,7 +9,7 @@ import HTMLWebpackPlugin = require('html-webpack-plugin')
 import CopyWebpackPlugin = require('copy-webpack-plugin')
 import test from 'ava'
 
-// Us
+// Ours
 import { MergeHTMLPlugin } from '../src'
 
 const webpackAsync = promisify(webpack)

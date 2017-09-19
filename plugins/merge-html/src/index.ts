@@ -1,7 +1,7 @@
 // Packages
 import { Plugin } from 'webpack'
 
-// Us
+// Ours
 import { merge } from './merge'
 
 /**

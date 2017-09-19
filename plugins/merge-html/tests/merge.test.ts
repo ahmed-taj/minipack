@@ -1,7 +1,7 @@
 // Packages
 import test from 'ava'
 
-// Us
+// Ours
 import { merge } from '../src/merge'
 
 test('replaces target <body> with given string', t => {

@@ -9,7 +9,7 @@ import ExtractTextPlugin = require('extract-text-webpack-plugin')
 import { MergeHTMLPlugin } from '@glitchbook/merge-html-plugin'
 import { RemoveJunksPlugin } from '@glitchbook/remove-junks-plugin'
 
-// Us
+// Ours
 import { CompilerOptions } from "../types/options";
 import { BUILD_DIR, INDEX_TITLE, DEFAULT_PUBLIC_PATH } from './globals'
 import { CSS_RULES } from './support/css'

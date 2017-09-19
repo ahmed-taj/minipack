@@ -1,7 +1,7 @@
 // Packages
 import { Rule } from 'webpack'
 
-// Us
+// Ours
 import browserslist from '../browserslist'
 
 export const JS_RULES = (): Rule[] => [
