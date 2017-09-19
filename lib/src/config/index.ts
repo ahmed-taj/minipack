@@ -45,6 +45,7 @@ class Config {
       // Output(s)
       output: {
         filename: '[name].[chunkhash].js',
+        path: resolve(this.options.path, BUILD_DIR),
         publicPath: this.options.publicPath || DEFAULT_PUBLIC_PATH
       },
 
@@ -68,7 +69,10 @@ class Config {
       // Plugins
       plugins: [
         // First of all, let's remove the build dir
-        new CleanWebpackPlugin(BUILD_DIR, { verbose: false }),
+        new CleanWebpackPlugin(
+          resolve(this.options.path, BUILD_DIR),
+          { verbose: false }
+        ),
 
         // Save extracted index.[ext] for later use
         new ExtractTextPlugin('USER.html'),
