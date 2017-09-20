@@ -9,6 +9,7 @@
   "scripts": {
     "commitmsg": "commitlint -e",
     "lerna:publish": "lerna publish --conventional-commits",
+    "postlerna:publish": "conventional-github-releaser -p angular",
     "git": "git-cz",
     "precommit": "npm test -s",
     "prepare": "lerna bootstrap",
@@ -24,6 +25,7 @@
     "@commitlint/config-angular": "^3.1.1",
     "@commitlint/config-lerna-scopes": "^3.1.1",
     "commitizen": "^2.9.6",
+    "conventional-github-releaser": "^1.1.12",
     "cz-conventional-changelog": "^2.0.0",
     "husky": "^0.14.3",
     "lerna": "^2.1.2"
