@@ -2,21 +2,16 @@
   "name": "@glitchbook/remove-junks-plugin",
   "version": "1.0.1",
   "description": "glitch book - A webpack plugin to remove junk chunk's files",
-  "keywords": [
-    "glitch-book",
-    "webpack"
-  ],
+  "keywords": ["glitch-book", "webpack"],
   "license": "MIT",
   "author": "Ahmed T. Ali <ah.tajelsir@gmail.com>",
-  "files": [
-    "dist/src",
-    "README.md"
-  ],
+  "files": ["dist/src", "README.md"],
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",
   "scripts": {
     "clean": "rimraf -rf ./dist",
     "copy": "cpr ./tests/cases ./dist/tests/cases -o",
+    "lint": "tslint --fix -c tslint.json -p .",
     "git": "cd ../.. && npm run git",
     "prepare": "npm run clean -s && tsc && npm run copy -s",
     "test": "npm run prepare -s && ava ./dist/tests/integration.test.js"
@@ -39,5 +34,9 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "dependencies": {
+    "tslint": "^5.7.0",
+    "tslint-config-prettier": "^1.5.0"
   }
 }
