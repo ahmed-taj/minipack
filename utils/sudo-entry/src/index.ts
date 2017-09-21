@@ -7,7 +7,7 @@ import { getOptions, stringifyRequest } from 'loader-utils'
  */
 function sudoEntry() {
   // which files to include?
-  let { include } = Object.assign({ include: [] }, getOptions(this))
+  let { include = [] } = getOptions(this)
 
   // Make sure it's an array
   include = Array.isArray(include) ? include : [include]

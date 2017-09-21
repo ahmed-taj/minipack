@@ -1,21 +1,17 @@
 {
   "name": "@glitchbook/sudo-entry",
   "version": "1.0.1",
-  "description": "glitch book - A webpack loader that generates an entry by requiring the given resources",
-  "keywords": [
-    "glitch-book",
-    "webpack"
-  ],
+  "description":
+    "glitch book - A webpack loader that generates an entry by requiring the given resources",
+  "keywords": ["glitch-book", "webpack"],
   "license": "MIT",
   "author": "Ahmed T. Ali <ah.tajelsir@gmail.com>",
-  "files": [
-    "dist/src",
-    "README.md"
-  ],
+  "files": ["dist/src", "README.md"],
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",
   "scripts": {
     "clean": "rimraf -rf ./dist",
+    "lint": "tslint --fix -c tslint.json -p .",
     "git": "cd ../.. && npm run git -s",
     "prepare": "npm run clean -s && tsc",
     "test": "npm run prepare -s && ava ./dist/tests/**/*.test.js"
@@ -30,6 +26,8 @@
     "ava": "^0.22.0",
     "loader-runner": "^2.3.0",
     "rimraf": "^2.6.1",
+    "tslint": "^5.7.0",
+    "tslint-config-prettier": "^1.5.0",
     "typescript": "^2.4.2"
   },
   "engines": {
