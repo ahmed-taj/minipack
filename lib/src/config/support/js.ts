@@ -4,6 +4,7 @@ import { Rule } from 'webpack'
 // Ours
 import browserslist from '../browserslist'
 
+// tslint:disable
 export const JS_RULES = (): Rule[] => [
   // ES6 (and beyond) support
   {
@@ -13,11 +14,14 @@ export const JS_RULES = (): Rule[] => [
     options: {
       babelrc: false,
       presets: [
-        [require.resolve('babel-preset-env'), {
-          targets: {
-            browsers: browserslist
+        [
+          require.resolve('babel-preset-env'),
+          {
+            targets: {
+              browsers: browserslist
+            }
           }
-        }],
+        ],
         require.resolve('babel-preset-react')
       ],
       // Enables caching results in ./node_modules/.cache/babel-loader/

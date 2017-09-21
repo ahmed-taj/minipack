@@ -2,20 +2,15 @@
   "name": "@glitchbook/lib",
   "version": "1.0.1",
   "description": "glitch book - the core Node.js module",
-  "keywords": [
-    "glitch-book",
-    "webpack"
-  ],
+  "keywords": ["glitch-book", "webpack"],
   "license": "MIT",
   "author": "Ahmed T. Ali <ah.tajelsir@gmail.com>",
-  "files": [
-    "dist/src",
-    "README.md"
-  ],
+  "files": ["dist/src", "README.md"],
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",
   "scripts": {
     "clean": "rimraf -rf ./dist",
+    "lint": "tslint --fix -c tslint.json -p .",
     "copy": "cpr ./src/template/index.ejs ./dist/src/template/index.ejs -o",
     "doc": "documentation readme ./dist/src/index.js --section=API",
     "git": "cd .. && npm run git",
@@ -50,6 +45,8 @@
     "cpr": "^2.2.0",
     "documentation": "^5.3.2",
     "rimraf": "^2.6.1",
+    "tslint": "^5.7.0",
+    "tslint-config-prettier": "^1.5.0",
     "typescript": "^2.4.2"
   },
   "engines": {

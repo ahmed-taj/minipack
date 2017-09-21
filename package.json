@@ -9,9 +9,11 @@
   "scripts": {
     "commitmsg": "commitlint -e",
     "lerna:publish": "lerna publish --conventional-commits",
+    "lint": "lerna run lint",
+    "lint:staged": "lint-staged",
     "postlerna:publish": "conventional-github-releaser -p angular",
     "git": "git-cz",
-    "precommit": "npm test -s",
+    "precommit": "npm test -s && npm run lint:staged",
     "prepare": "lerna bootstrap",
     "test": "lerna run test"
   },
@@ -28,6 +30,19 @@
     "conventional-github-releaser": "^1.1.12",
     "cz-conventional-changelog": "^2.0.0",
     "husky": "^0.14.3",
-    "lerna": "^2.1.2"
+    "lerna": "^2.1.2",
+    "lint-staged": "^4.2.1",
+    "prettier": "^1.7.0",
+    "tslint": "^5.7.0",
+    "tslint-config-prettier": "^1.5.0",
+    "typescript": "^2.5.2"
+  },
+  "lint-staged": {
+    "*.ts": [
+      "prettier --write --no-semi --single-quote",
+      "tslint --fix -c tslint.json",
+      "git add"
+    ],
+    "*.json": ["prettier --write", "git add"]
   }
 }

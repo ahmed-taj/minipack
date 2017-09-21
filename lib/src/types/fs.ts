@@ -4,7 +4,9 @@
 export interface FileSystem {
   readdirSync: (dir: string) => string[]
 
-  statSync(path: string): {
+  statSync(
+    path: string
+  ): {
     isFile: () => boolean
   }
 }

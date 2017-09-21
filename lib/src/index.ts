@@ -2,8 +2,8 @@
 import webpack = require('webpack')
 
 // Ours
-import { CompilerOptions } from './types/options'
 import { Config } from './config'
+import { CompilerOptions } from './types/options'
 
 /**
  * Generates a suitable webpack configuration object internally based on the 

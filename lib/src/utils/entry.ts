@@ -1,5 +1,5 @@
 // Native
-import { basename, extname, resolve, dirname } from 'path'
+import { basename, dirname, extname, resolve } from 'path'
 
 // Packages
 import { Entry } from 'webpack'
@@ -17,13 +17,12 @@ import { FileSystem } from '../types/fs'
  */
 const entry = (name: string, dir: string, fs: FileSystem): string[] => {
   // We only care about name.* in the root dir
-  return fs.readdirSync(dir)
-    .filter(f => {
-      if (fs.statSync(resolve(dir, f)).isFile()) {
-        return (basename(f, extname(f)) == name) && (dirname(f) == '.')
-      }
-      return false
-    })
+  return fs.readdirSync(dir).filter(f => {
+    if (fs.statSync(resolve(dir, f)).isFile()) {
+      return basename(f, extname(f)) === name && dirname(f) === '.'
+    }
+    return false
+  })
 }
 
 /**
@@ -50,10 +49,11 @@ const makeEntries = (dir: string, fs: FileSystem): Entry => {
     }
 
     // Determine which bundles we need
-    if (files[name].length == 1) {
-      if (name == 'app') {
+    if (files[name].length === 1) {
+      // tslint:disable:prefer-conditional-expression
+      if (name === 'app') {
         // Just point to the entry file as usual webpack config
-        entries[name] = resolve(dir, files['app'].pop())
+        entries[name] = resolve(dir, files[name].pop())
       } else {
         // Use sudo-entry loader here to generate a suitable code dynamically
         entries[name] = `${sudo}?include[]=${resolve(dir, files[name].pop())}!`

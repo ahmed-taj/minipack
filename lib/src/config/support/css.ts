@@ -12,6 +12,7 @@ const baseRule = [
 export const CSS_RULES = (): Rule[] => [
   // CSS
   {
+    // tslint:disable
     test: /\.css$/,
     use: [
       ...baseRule,

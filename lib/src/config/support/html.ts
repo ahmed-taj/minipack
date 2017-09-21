@@ -1,8 +1,8 @@
 import { extname } from 'path'
 
 // Packages
-import { Rule } from 'webpack'
 import ExtractTextPlugin = require('extract-text-webpack-plugin')
+import { Rule } from 'webpack'
 
 export const HTML_RULES = (index: string): Rule[] => {
   const rules: Rule[] = [
