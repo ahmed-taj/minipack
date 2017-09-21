@@ -9,23 +9,23 @@ import { merge } from './merge'
  * HTML string from an asset
  */
 class MergeHTMLPlugin implements Plugin {
-  constructor(private file: string) { }
+  constructor(private file: string) {}
 
-  apply(compiler) {
+  public apply(compiler) {
     compiler.plugin('compilation', compilation => {
-
-      // Before HTML processing is the prefect time for us, because we won't 
+      // Before HTML processing is the prefect time for us, because we won't
       // worry:
-      // 
-      // 1. about template language being used. HWP takes care of it in the 
+      //
+      // 1. about template language being used. HWP takes care of it in the
       //    previous step.
-      // 
-      // 2. where to inject our string due the emptiness of <body> element at 
+      //
+      // 2. where to inject our string due the emptiness of <body> element at
       //    this stage.
-      // 
-      // NOTE: we assume a default like HTML template, which means the <body> 
+      //
+      // NOTE: we assume a default like HTML template, which means the <body>
       //       must be empty
-      compilation.plugin('html-webpack-plugin-before-html-processing',
+      compilation.plugin(
+        'html-webpack-plugin-before-html-processing',
         (htmlPluginData, callback) => {
           // Make sure the asset actually exists
           if (this.file in compilation.assets) {
@@ -39,11 +39,13 @@ class MergeHTMLPlugin implements Plugin {
               new Error(
                 `No such asset: '${this.file}'
                 You probably have mistyped the file name or misconfigured the plugins ordering!`
-              ))
+              )
+            )
           }
 
           callback(null, htmlPluginData)
-        })
+        }
+      )
     })
   }
 }
