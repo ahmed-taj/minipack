@@ -5,10 +5,6 @@
       "conventional-commits": true
     }
   },
-  "packages": [
-    "./lib",
-    "./utils/*",
-    "./plugins/*"
-  ],
+  "packages": ["./lib", "./utils/*", "./plugins/*"],
   "version": "1.0.1"
 }
