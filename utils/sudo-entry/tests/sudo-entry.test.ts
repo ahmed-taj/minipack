@@ -21,6 +21,11 @@ const run = async files => {
   })
 }
 
+test('generates an empty string if no files', async t => {
+  const { result } = await run([])
+  t.is(result.toString(), '')
+})
+
 test('generates an entry from a single file', async t => {
   const { result } = await run('./index.html')
   t.is(result.toString(), 'require("./index.html");')
