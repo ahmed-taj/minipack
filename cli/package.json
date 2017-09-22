@@ -1,0 +1,43 @@
+{
+  "name": "@glitchbook/cli",
+  "version": "1.0.1",
+  "preferGlobal": true,
+  "description": "glitch book - A command line interface for glitch book",
+  "keywords": ["glitch-book", "webpack"],
+  "license": "MIT",
+  "author": "Ahmed T. Ali <ah.tajelsir@gmail.com>",
+  "files": ["dist/src/*", "README.md"],
+  "bin": {
+    "glb": "./dist/src/index.js",
+    "glitchbook": "./dist/src/index.js"
+  },
+  "scripts": {
+    "clean": "rimraf -rf ./dist",
+    "lint": "tslint --fix -c tslint.json -p .",
+    "git": "cd .. && npm run git",
+    "prepare": "npm run clean -s && tsc",
+    "test": "npm run prepare -s && ava ./dist/tests/**/*.test.js"
+  },
+  "devDependencies": {
+    "@types/find-up": "^2.1.1",
+    "@types/node": "^8.0.26",
+    "@types/webpack": "^3.0.10",
+    "@types/yargs": "^8.0.2",
+    "ava": "^0.22.0",
+    "rimraf": "^2.6.1",
+    "tslint": "^5.7.0",
+    "tslint-config-prettier": "^1.5.0",
+    "typescript": "^2.4.2"
+  },
+  "engines": {
+    "node": ">=8.4.0",
+    "npm": ">=5.3.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "find-up": "^2.1.0",
+    "yargs": "^9.0.1"
+  }
+}
