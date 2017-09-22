@@ -1,7 +1,10 @@
 // Packages
 import { sync as findup } from 'find-up'
+import * as webpack from 'webpack'
 
-// Ours
+const webpackPackage = require(findup('package.json', {
+  cwd: require.resolve('webpack')
+}))
 const { version } = require(findup('package.json', { cwd: __dirname }))
 
 /**
@@ -10,5 +13,9 @@ const { version } = require(findup('package.json', { cwd: __dirname }))
  * @return {string} formated version
  */
 export const versions = (): string => {
-  return `Glitch book: v${version}\n` + `Node.js    : ${process.version}`
+  return (
+    `Glitch book: v${version}\n` +
+    `Webpack    : v${webpackPackage.version}\n` +
+    `Node.js    : ${process.version}`
+  )
 }
