@@ -3,7 +3,7 @@ import * as fs from 'fs'
 
 // Packages
 import { prepare } from '@glitchbook/lib'
-import { cyan } from 'chalk'
+import { bold, cyan } from 'chalk'
 import * as DevServer from 'webpack-dev-server'
 import { CommandBuilder } from 'yargs'
 
@@ -37,20 +37,29 @@ const builder: CommandBuilder = {
 
 // A function which will be passed the parsed argv
 const handler = argv => {
-  // Prepare returns an instance of webpack.Compiler
-  const compiler = prepare({ fs, path: process.cwd() })
+  try {
+    // Prepare returns an instance of webpack.Compiler
+    const compiler = prepare({ fs, path: process.cwd() })
 
-  // Create an instance of webpack-dev-server
-  const server = new DevServer(compiler, serverConfig)
+    // Create an instance of webpack-dev-server
+    const server = new DevServer(compiler, serverConfig)
 
-  server.listen(argv.port, argv.host, err => {
-    if (err) {
-      return console.log(err)
+    server.listen(argv.port, argv.host, err => {
+      if (err) {
+        return console.log(err)
+      }
+
+      console.log(cyan(`Starting in http://${argv.host}:${argv.port}\n`))
+      console.log(cyan('Use CTRL-C to stop the server'))
+    })
+  } catch (error) {
+    if (error.name === 'WebpackOptionsValidationError') {
+      // This probably due to no entry error
+      console.log(
+        `Nothing to run in '${cyan(process.cwd())}', ${bold('aborting!')}\n`
+      )
     }
-
-    console.log(cyan(`Starting in http://${argv.host}:${argv.port}\n`))
-    console.log(cyan('Use CTRL-C to stop the server'))
-  })
+  }
 }
 
 export { command, aliases, desc, builder, handler }
