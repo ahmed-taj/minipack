@@ -2,7 +2,7 @@
 import { sync as findup } from 'find-up'
 
 // Ours
-const { version } = require(findup('package.json'))
+const { version } = require(findup('package.json', { cwd: __dirname }))
 
 /**
  * Determine the app versions(inc. node version)
