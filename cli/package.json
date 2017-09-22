@@ -19,9 +19,11 @@
     "test": "npm run prepare -s && ava ./dist/tests/**/*.test.js"
   },
   "devDependencies": {
+    "@types/chalk": "^0.4.31",
     "@types/find-up": "^2.1.1",
     "@types/node": "^8.0.26",
-    "@types/webpack": "^3.0.10",
+    "@types/webpack": "^3.0.11",
+    "@types/webpack-dev-server": "^2.4.1",
     "@types/yargs": "^8.0.2",
     "ava": "^0.22.0",
     "rimraf": "^2.6.1",
@@ -37,7 +39,11 @@
     "access": "public"
   },
   "dependencies": {
+    "@glitchbook/lib": "^1.0.1",
+    "chalk": "^2.1.0",
     "find-up": "^2.1.0",
+    "webpack": "^3.6.0",
+    "webpack-dev-server": "^2.8.2",
     "yargs": "^9.0.1"
   }
 }

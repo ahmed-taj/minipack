@@ -10,6 +10,7 @@ import { versions } from './utils/versions'
 yargs
   .usage(`Usage:  glb [command] [options]`)
   .version(versions())
+  .commandDir('./commands')
   .epilogue(
     `If you have any problems, do not hesitate to file an issue:\n` +
       `  https://github.com/glitchbook/glitchbook/issues/new`
