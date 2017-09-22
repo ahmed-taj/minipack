@@ -15,7 +15,21 @@ $ npm install @glitchbook/cli
 
 ## Usage
 
-TODO 
+```
+Usage:  glb [command] [options]
+
+Commands:
+  start [options]  Starts a live server in the current path         [aliases: s]
+
+Options:
+  --version  Show version number                                       [boolean]
+  --help     Show help                                                 [boolean]
+
+If you have any problems, do not hesitate to file an issue:
+  https://github.com/glitchbook/glitchbook/issues/new
+
+
+```
 
 ## Contributing
 
