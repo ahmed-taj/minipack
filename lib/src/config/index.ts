@@ -11,7 +11,7 @@ import { Configuration, Entry } from 'webpack'
 
 // Ours
 import { CompilerOptions } from '../types/options'
-import { entry, extractName, makeEntries } from '../utils/entry'
+import { entry, makeEntries } from '../utils/entry'
 import { BUILD_DIR, DEFAULT_PUBLIC_PATH, INDEX_TITLE } from './globals'
 import { CSS_RULES } from './support/css'
 import { HTML_RULES } from './support/html'
@@ -24,17 +24,10 @@ import { JS_RULES } from './support/js'
  */
 class Config {
   private entries: Entry
-  private indexFile: string
 
   constructor(private options: CompilerOptions) {
     // webpack entries
     this.entries = makeEntries(this.options.path, this.options.fs)
-
-    // Do we have index.[ext] template?
-    this.indexFile = null
-    if (this.entries.index) {
-      this.indexFile = extractName(this.entries.index as string)
-    }
 
     // Setup dev server
     if (this.options.dev) {
@@ -69,7 +62,7 @@ class Config {
         rules: [
           {
             oneOf: [
-              ...HTML_RULES(this.indexFile),
+              ...HTML_RULES(this.options.path),
               ...CSS_RULES(),
               ...JS_RULES()
             ]

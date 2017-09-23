@@ -65,14 +65,4 @@ const makeEntries = (dir: string, fs: FileSystem): Entry => {
   return entries
 }
 
-/**
- * Extract file name from sudo-entry loader string
- * 
- * @param str 
- * @private
- */
-const extractName = (str: string) => {
-  return str.substring(str.indexOf('?include[]=') + 11, str.length - 1)
-}
-
-export { entry, makeEntries, extractName }
+export { entry, makeEntries }

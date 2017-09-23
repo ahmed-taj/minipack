@@ -1,21 +1,18 @@
-import { extname } from 'path'
+import { join } from 'path'
 
 // Packages
 import ExtractTextPlugin = require('extract-text-webpack-plugin')
 import { Rule } from 'webpack'
 
-export const HTML_RULES = (index: string): Rule[] => {
+export const HTML_RULES = (path: string): Rule[] => {
   const rules: Rule[] = [
-    { test: /\.html$/, loader: require.resolve('html-loader') }
-  ]
-  // index.[ext] specific loader
-  if (index) {
-    rules.unshift({
-      test: index,
+    {
+      test: join(path, 'index.html'),
       use: ExtractTextPlugin.extract({
         use: [require.resolve('html-loader')]
       })
-    })
-  }
+    },
+    { test: /\.html$/, loader: require.resolve('html-loader') }
+  ]
   return rules
 }
