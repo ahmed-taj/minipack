@@ -20,7 +20,7 @@ const aliases = ['s']
 
 // String used as the description for the command in help text, use false for
 // a hidden command
-const desc = 'Starts a live server in the current path'
+const desc = 'Starts a dev server in the current path'
 
 // Object declaring the options the command accepts, or a function accepting
 // and returning a yargs instance
@@ -37,29 +37,26 @@ const builder: CommandBuilder = {
 
 // A function which will be passed the parsed argv
 const handler = argv => {
-  try {
-    // Prepare returns an instance of webpack.Compiler
-    const compiler = prepare({ fs, path: process.cwd() })
+  const url = `http://${argv.host}:${argv.port}`
 
-    // Create an instance of webpack-dev-server
-    const server = new DevServer(compiler, serverConfig)
+  // Prepare returns an instance of webpack.Compiler
+  const compiler = prepare({
+    dev: { client: require.resolve('webpack-dev-server/client'), url },
+    fs,
+    path: process.cwd()
+  })
 
-    server.listen(argv.port, argv.host, err => {
-      if (err) {
-        return console.log(err)
-      }
+  // Create an instance of webpack-dev-server
+  const server = new DevServer(compiler, serverConfig)
 
-      console.log(cyan(`Starting in http://${argv.host}:${argv.port}\n`))
-      console.log(cyan('Use CTRL-C to stop the server'))
-    })
-  } catch (error) {
-    if (error.name === 'WebpackOptionsValidationError') {
-      // This probably due to no entry error
-      console.log(
-        `Nothing to run in '${cyan(process.cwd())}', ${bold('aborting!')}\n`
-      )
+  server.listen(argv.port, argv.host, err => {
+    if (err) {
+      return console.log(err)
     }
-  }
+
+    console.log(cyan(`Starting in ${url}\n`))
+    console.log(cyan('Use CTRL-C to stop the server'))
+  })
 }
 
 export { command, aliases, desc, builder, handler }
