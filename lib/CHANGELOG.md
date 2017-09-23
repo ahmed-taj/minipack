@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.2.0"></a>
+# [1.2.0](https://github.com/glitchbook/glitchbook/compare/v1.1.0...v1.2.0) (2017-09-23)
+
+
+### Bug Fixes
+
+* **lib:** place dev server string in 'app' entry ([0cbc418](https://github.com/glitchbook/glitchbook/commit/0cbc418))
+
+
+### Features
+
+* **lib:** support dev server options ([aa326e5](https://github.com/glitchbook/glitchbook/commit/aa326e5))
+
+
+
+
 <a name="1.1.0"></a>
 # [1.1.0](https://github.com/glitchbook/glitchbook/compare/v1.0.1...v1.1.0) (2017-09-22)
 

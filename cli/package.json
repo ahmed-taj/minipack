@@ -1,6 +1,6 @@
 {
   "name": "@glitchbook/cli",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "preferGlobal": true,
   "description": "glitch book - A command line interface for glitch book",
   "keywords": ["glitch-book", "webpack"],
@@ -39,7 +39,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@glitchbook/lib": "^1.1.0",
+    "@glitchbook/lib": "^1.2.0",
     "chalk": "^2.1.0",
     "find-up": "^2.1.0",
     "webpack": "^3.6.0",
