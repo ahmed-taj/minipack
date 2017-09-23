@@ -38,8 +38,10 @@ class Config {
 
     // Setup dev server
     if (this.options.dev) {
-      const { client, url } = this.options.dev
-      this.entries.dev = `${client}?${url}`
+      const devEntry = `${this.options.dev.client}?${this.options.dev.url}`
+      this.entries.app = this.entries.app
+        ? [...this.entries.app, devEntry]
+        : [devEntry]
     }
   }
 

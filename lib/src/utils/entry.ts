@@ -53,7 +53,8 @@ const makeEntries = (dir: string, fs: FileSystem): Entry => {
       // tslint:disable:prefer-conditional-expression
       if (name === 'app') {
         // Just point to the entry file as usual webpack config
-        entries[name] = resolve(dir, files[name].pop())
+        // Use an array to simplify adding the dev server string later
+        entries[name] = [resolve(dir, files[name].pop())]
       } else {
         // Use sudo-entry loader here to generate a suitable code dynamically
         entries[name] = `${sudo}?include[]=${resolve(dir, files[name].pop())}!`

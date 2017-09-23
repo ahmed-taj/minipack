@@ -25,5 +25,5 @@ test('setup dev server', t => {
   }).generate()
 
   // tslint:disable:no-string-literal
-  t.is(conf.entry['dev'], 'myclient?example.com')
+  t.deepEqual(conf.entry['app'], ['myclient?example.com'])
 })
