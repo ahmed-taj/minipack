@@ -34,13 +34,6 @@ class MergeHTMLPlugin implements Plugin {
 
             // Inject the source then replace the original HTML
             htmlPluginData.html = merge(src, htmlPluginData.html)
-          } else {
-            compilation.errors.push(
-              new Error(
-                `No such asset: '${this.file}'
-                You probably have mistyped the file name or misconfigured the plugins ordering!`
-              )
-            )
           }
 
           callback(null, htmlPluginData)
