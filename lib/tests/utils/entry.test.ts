@@ -3,7 +3,7 @@ import test from 'ava'
 
 // Ours
 import { entry } from '../../src/utils/entry'
-import { dir, fs, mapFalse, mapTrue } from './helpers'
+import { dir, fs, mapFalse, mapTrue } from '../helpers'
 
 const name = 'app'
 

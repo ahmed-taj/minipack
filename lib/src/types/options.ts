@@ -10,6 +10,12 @@ interface CompilerOptions {
 
   // Public path
   publicPath?: string
+
+  // Dev server config
+  dev?: {
+    client: string
+    url: string
+  }
 }
 
 export { CompilerOptions }

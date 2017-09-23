@@ -3,13 +3,27 @@ import test from 'ava'
 
 // Ours
 import { Config } from '../../src/config'
-import { FakeFileSystem } from '../helpers'
+import { dir, fs } from '../helpers'
 
 test('Configuration', t => {
   const conf = new Config({
-    fs: new FakeFileSystem('/fake/dir', [['app.js', true]]),
-    path: __dirname
+    fs: fs([]),
+    path: dir
   }).generate()
 
-  t.is(conf.context, __dirname)
+  t.is(conf.context, dir)
+})
+
+test('setup dev server', t => {
+  const conf = new Config({
+    dev: {
+      client: 'myclient',
+      url: 'example.com'
+    },
+    fs: fs([]),
+    path: dir
+  }).generate()
+
+  // tslint:disable:no-string-literal
+  t.is(conf.entry['dev'], 'myclient?example.com')
 })

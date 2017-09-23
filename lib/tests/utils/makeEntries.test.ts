@@ -3,7 +3,7 @@ import test from 'ava'
 
 // Ours
 import { makeEntries } from '../../src/utils/entry'
-import { dir, fs, mapFalse, mapTrue } from './helpers'
+import { dir, fs, mapFalse, mapTrue } from '../helpers'
 
 test('makes nothing when no entries', t => {
   t.deepEqual(makeEntries(dir, fs(mapTrue([]))), {})

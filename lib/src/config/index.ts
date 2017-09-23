@@ -35,6 +35,12 @@ class Config {
     if (this.entries.index) {
       this.indexFile = extractName(this.entries.index as string)
     }
+
+    // Setup dev server
+    if (this.options.dev) {
+      const { client, url } = this.options.dev
+      this.entries.dev = `${client}?${url}`
+    }
   }
 
   // tslint:disable
