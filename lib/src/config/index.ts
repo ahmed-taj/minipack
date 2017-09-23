@@ -23,26 +23,13 @@ import { JS_RULES } from './support/js'
  * @private
  */
 class Config {
-  private entries: Entry
-
-  constructor(private options: CompilerOptions) {
-    // webpack entries
-    this.entries = makeEntries(this.options.path, this.options.fs)
-
-    // Setup dev server
-    if (this.options.dev) {
-      const devEntry = `${this.options.dev.client}?${this.options.dev.url}`
-      this.entries.app = this.entries.app
-        ? [...this.entries.app, devEntry]
-        : [devEntry]
-    }
-  }
+  constructor(private options: CompilerOptions) {}
 
   // tslint:disable
   public generate(): Configuration {
     return {
       // Entries
-      entry: this.entries,
+      entry: makeEntries(this.options),
 
       // Output(s)
       output: {

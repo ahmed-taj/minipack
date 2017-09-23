@@ -6,6 +6,7 @@ import { Entry } from 'webpack'
 
 // Ours
 import { FileSystem } from '../types/fs'
+import { CompilerOptions } from '../types/options'
 
 /**
  * Lookup suitable entry (name.*) file in a given directory
@@ -32,7 +33,10 @@ const entry = (name: string, dir: string, fs: FileSystem): string[] => {
  * @return {Entry}
  * @private
  */
-const makeEntries = (dir: string, fs: FileSystem): Entry => {
+const makeEntries = (options: CompilerOptions): Entry => {
+  // The options we need
+  const { path, fs, dev = null } = options
+
   // NOTE: names are case-sensitive
   const names = ['app', 'index', 'style']
   const files = {}
@@ -43,24 +47,34 @@ const makeEntries = (dir: string, fs: FileSystem): Entry => {
 
   // Get entry for each name
   names.forEach(name => {
-    files[name] = entry(name, dir, fs)
+    files[name] = entry(name, path, fs)
     if (files[name].length > 1) {
-      return new Error(`Multiple ${name}.[ext] entries found in '${dir}' root`)
+      return new Error(`Multiple ${name}.[ext] entries found in '${path}' root`)
     }
 
     // Determine which bundles we need
     if (files[name].length === 1) {
       // tslint:disable:prefer-conditional-expression
       if (name === 'app') {
-        // Just point to the entry file as usual webpack config
-        // Use an array to simplify adding the dev server string later
-        entries[name] = [resolve(dir, files[name].pop())]
+        entries[name] = [resolve(path, files[name].pop())]
       } else {
         // Use sudo-entry loader here to generate a suitable code dynamically
-        entries[name] = `${sudo}?include[]=${resolve(dir, files[name].pop())}!`
+        entries[name] = `${sudo}?include[]=${resolve(path, files[name].pop())}!`
       }
     }
   })
+
+  // Setup dev server (if any)
+  if (dev) {
+    // Where to put dev server string
+    const devPoint = 'app'
+    // Dev server string
+    const devServer = [`${dev.client}?${dev.url}`]
+
+    entries[devPoint] = entries[devPoint]
+      ? [...entries[devPoint], ...devServer]
+      : devServer
+  }
 
   return entries
 }
