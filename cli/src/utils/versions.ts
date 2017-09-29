@@ -14,8 +14,8 @@ const { version } = require(findup('package.json', { cwd: __dirname }))
  */
 export const versions = (): string => {
   return (
-    `Glitch book: v${version}\n` +
-    `Webpack    : v${webpackPackage.version}\n` +
-    `Node.js    : ${process.version}`
+    `Glitch : v${version}\n` +
+    `Webpack: v${webpackPackage.version}\n` +
+    `Node.js: ${process.version}`
   )
 }

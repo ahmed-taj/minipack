@@ -1,10 +1,10 @@
 {
-  "name": "glitchbook",
+  "name": "glitchapp",
   "version": "0.0.0-semver",
   "description": "An interactive playground for the modern web",
   "license": "MIT",
   "repository": {
-    "url": "https://github.com/glitchbook/glitchbook.git"
+    "url": "https://github.com/glitchapp/glitch.git"
   },
   "scripts": {
     "commitmsg": "commitlint -e",

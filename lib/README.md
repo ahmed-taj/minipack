@@ -1,17 +1,17 @@
-# Glitch book lib
+# Glitch lib
 
-[![npm (scoped)](https://img.shields.io/npm/v/@glitchbook/lib.svg?style=flat-square)](<>)
-[![Travis](https://img.shields.io/travis/glitchbook/glitchbook.svg?style=flat-square)](<>)
-[![npm](https://img.shields.io/npm/l/@glitchbook/lib.svg?style=flat-square)](<>)
+[![npm (scoped)](https://img.shields.io/npm/v/@glitchapp/lib.svg?style=flat-square)](<>)
+[![Travis](https://img.shields.io/travis/glitchapp/glitch.svg?style=flat-square)](<>)
+[![npm](https://img.shields.io/npm/l/@glitchapp/lib.svg?style=flat-square)](<>)
 
-> This package is part of [Glitch book](https://github.com/glitchbook) project
+> This package is part of [Glitch](https://github.com/glitchapp) project
 
-Glitch book's core Node.js module. It generates a suitable webpack [configuration](https://webpack.js.org/configuration/) object internally then passes you a preconfigured [Compiler instance](https://webpack.js.org/api/node/#compiler-instance)
+Glitch's core Node.js module. It generates a suitable webpack [configuration](https://webpack.js.org/configuration/) object internally then passes you a preconfigured [Compiler instance](https://webpack.js.org/api/node/#compiler-instance)
 
 ## Installation
 
 ```sh
-$ npm install @glitchbook/lib
+$ npm install @glitchapp/lib
 ```
 
 ## API

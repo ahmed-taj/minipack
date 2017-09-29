@@ -2,8 +2,8 @@
 import { resolve } from 'path'
 
 // Packages
-import { MergeHTMLPlugin } from '@glitchbook/merge-html-plugin'
-import { RemoveJunksPlugin } from '@glitchbook/remove-junks-plugin'
+import { MergeHTMLPlugin } from '@glitchapp/merge-html-plugin'
+import { RemoveJunksPlugin } from '@glitchapp/remove-junks-plugin'
 import CleanWebpackPlugin = require('clean-webpack-plugin')
 import ExtractTextPlugin = require('extract-text-webpack-plugin')
 import HTMLWebpackPlugin = require('html-webpack-plugin')

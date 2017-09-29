@@ -2,7 +2,7 @@
 import * as fs from 'fs'
 
 // Packages
-import { prepare } from '@glitchbook/lib'
+import { prepare } from '@glitchapp/lib'
 import { bold, cyan } from 'chalk'
 import * as DevServer from 'webpack-dev-server'
 import { CommandBuilder } from 'yargs'

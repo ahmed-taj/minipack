@@ -13,6 +13,6 @@ yargs
   .commandDir('./commands')
   .epilogue(
     `If you have any problems, do not hesitate to file an issue:\n` +
-      `  https://github.com/glitchbook/glitchbook/issues/new`
+      `  https://github.com/glitchapp/glitch/issues/new`
   )
   .help().argv

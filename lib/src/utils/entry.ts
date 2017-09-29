@@ -43,7 +43,7 @@ const makeEntries = (options: CompilerOptions): Entry => {
   const entries = {}
 
   // Our sudo entry loader :)
-  const sudo = require.resolve('@glitchbook/sudo-entry')
+  const sudo = require.resolve('@glitchapp/sudo-entry')
 
   // Get entry for each name
   names.forEach(name => {

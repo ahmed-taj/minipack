@@ -1,9 +1,9 @@
 {
-  "name": "@glitchbook/sudo-entry",
-  "version": "1.2.0",
+  "name": "@glitchapp/sudo-entry",
+  "version": "0.0.0",
   "description":
-    "glitch book - A webpack loader that generates an entry by requiring the given resources",
-  "keywords": ["glitch-book", "webpack"],
+    "Glitch - A webpack loader that generates an entry by requiring the given resources",
+  "keywords": ["glitch-app", "webpack"],
   "license": "MIT",
   "author": "Ahmed T. Ali <ah.tajelsir@gmail.com>",
   "files": ["dist/src", "README.md"],

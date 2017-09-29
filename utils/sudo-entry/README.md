@@ -1,17 +1,17 @@
 # Sudo entry
 
-[![npm (scoped)](https://img.shields.io/npm/v/@glitchbook/sudo-entry.svg?style=flat-square)]()
-[![Travis](https://img.shields.io/travis/glitchbook/glitchbook.svg?style=flat-square)]()
-[![npm](https://img.shields.io/npm/l/@glitchbook/sudo-entry.svg?style=flat-square)]()
+[![npm (scoped)](https://img.shields.io/npm/v/@glitchapp/sudo-entry.svg?style=flat-square)]()
+[![Travis](https://img.shields.io/travis/glitchapp/glitch.svg?style=flat-square)]()
+[![npm](https://img.shields.io/npm/l/@glitchapp/sudo-entry.svg?style=flat-square)]()
 
-> This package is part of [Glitch book](https://github.com/glitchbook) project
+> This package is part of [Glitch](https://github.com/glitchapp) project
 
 A webpack loader that generates an entry by requiring the given resources. Useful when your entry isn't a JavaScript module.
 
 ## Installation
 
 ```sh
-$ npm install @glitchbook/sudo-entry
+$ npm install @glitchapp/sudo-entry
 ```
 
 ## Usage
@@ -25,7 +25,7 @@ module.exports = {
   //
   //    require('index.html');
   //
-  entry: '@glitchbook/sudo-entry?include=index.html!',
+  entry: '@glitchapp/sudo-entry?include=index.html!',
   output: {
     filename: 'bundle.js'
   },
@@ -44,7 +44,7 @@ module.exports = {
   //    require('index.html');
   //    require('style.css');
   //
-  entry: '@glitchbook/sudo-entry?include[]=index.html,include[]=style.css!',
+  entry: '@glitchapp/sudo-entry?include[]=index.html,include[]=style.css!',
   output: {
     filename: 'bundle.js'
   },

@@ -1,24 +1,24 @@
 # Remove Junks Plugin
 
-[![npm (scoped)](https://img.shields.io/npm/v/@glitchbook/remove-junks-plugin.svg?style=flat-square)]()
-[![Travis](https://img.shields.io/travis/glitchbook/glitchbook.svg?style=flat-square)]()
-[![npm](https://img.shields.io/npm/l/@glitchbook/remove-junks-plugin.svg?style=flat-square)]()
+[![npm (scoped)](https://img.shields.io/npm/v/@glitchapp/remove-junks-plugin.svg?style=flat-square)]()
+[![Travis](https://img.shields.io/travis/glitchapp/glitch.svg?style=flat-square)]()
+[![npm](https://img.shields.io/npm/l/@glitchapp/remove-junks-plugin.svg?style=flat-square)]()
 
-> This package is part of [Glitch book](https://github.com/glitchbook) project
+> This package is part of [Glitch](https://github.com/glitchapp) project
 
 A webpack plugin to remove junk chunk's files
 
 ## Installation
 
 ```sh
-$ npm install @glitchbook/remove-junks-plugin
+$ npm install @glitchapp/remove-junks-plugin
 ```
 
 ## Usage
 
 ```javascript
 // webpack.config.js
-const { RemoveJunksPlugin } = require('@glitchbook/remove-junks-plugin')
+const { RemoveJunksPlugin } = require('@glitchapp/remove-junks-plugin')
 
 module.exports = {
   entry: {

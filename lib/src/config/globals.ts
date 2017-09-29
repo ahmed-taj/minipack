@@ -3,5 +3,5 @@
 // This helps reduce the maintenance time
 
 export const BUILD_DIR = 'dist'
-export const INDEX_TITLE = 'Glitch book | enjoy!'
+export const INDEX_TITLE = 'Glitch ツ'
 export const DEFAULT_PUBLIC_PATH = '/'
