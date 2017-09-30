@@ -1,12 +1,18 @@
 {
   "name": "@glitchapp/cli",
-  "version": "0.0.0",
+  "version": "1.0.0-alpha.0",
   "preferGlobal": true,
   "description": "Glitch - A command line interface for Glitch",
-  "keywords": ["glitch-app", "webpack"],
+  "keywords": [
+    "glitch-app",
+    "webpack"
+  ],
   "license": "MIT",
   "author": "Ahmed T. Ali <ah.tajelsir@gmail.com>",
-  "files": ["dist/src/*", "README.md"],
+  "files": [
+    "dist/src/*",
+    "README.md"
+  ],
   "bin": {
     "glitch": "./dist/src/index.js"
   },
@@ -38,7 +44,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@glitchapp/lib": "^0.0.0",
+    "@glitchapp/lib": "^1.0.0-alpha.0",
     "chalk": "^2.1.0",
     "find-up": "^2.1.0",
     "webpack": "^3.6.0",
