@@ -3,7 +3,6 @@ import { resolve } from 'path'
 
 // Packages
 import { MergeHTMLPlugin } from '@glitchapp/merge-html-plugin'
-import { RemoveJunksPlugin } from '@glitchapp/remove-junks-plugin'
 import CleanWebpackPlugin = require('clean-webpack-plugin')
 import ExtractTextPlugin = require('extract-text-webpack-plugin')
 import HTMLWebpackPlugin = require('html-webpack-plugin')
@@ -74,11 +73,8 @@ class Config {
         }),
 
         // Merge 'USER.html' to the generated 'index.html'
+        // TODO: Do we need to remove this file from output?
         new MergeHTMLPlugin('USER.html')
-
-        // Remove 'index' bundle, we don't need it anymore
-        // TODO: modify RemoveJunksPlugin to remove files instead of chunks
-        // new RemoveJunksPlugin(['index'])
       ],
 
       // Turn off performance hints during development because we don't do any
