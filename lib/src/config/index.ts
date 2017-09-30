@@ -28,7 +28,7 @@ class Config {
   public generate(): Configuration {
     return {
       // Entries
-      entry: makeEntries(this.options),
+      entry: () => makeEntries(this.options),
 
       // Output(s)
       output: {
