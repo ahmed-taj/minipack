@@ -16,7 +16,7 @@ const command = 'start [options]'
 
 // Array of strings (or a single string) representing aliases of `command`,
 // positional args defined in an alias are ignored
-const aliases = ['s']
+const aliases = []
 
 // String used as the description for the command in help text, use false for
 // a hidden command
