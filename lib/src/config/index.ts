@@ -33,7 +33,7 @@ class Config {
 
       // Output(s)
       output: {
-        filename: '[name].[chunkhash].js',
+        filename: 'bundle.[chunkhash].js',
         path: resolve(this.options.path, BUILD_DIR),
         publicPath: this.options.publicPath || DEFAULT_PUBLIC_PATH
       },
@@ -70,15 +70,15 @@ class Config {
         // generate 'index.html' for us
         new HTMLWebpackPlugin({
           template: resolve(__dirname, '..', 'template', 'index.ejs'),
-          title: INDEX_TITLE,
-          chunks: ['app', 'style']
+          title: INDEX_TITLE
         }),
 
         // Merge 'USER.html' to the generated 'index.html'
-        new MergeHTMLPlugin('USER.html'),
+        new MergeHTMLPlugin('USER.html')
 
         // Remove 'index' bundle, we don't need it anymore
-        new RemoveJunksPlugin(['index'])
+        // TODO: modify RemoveJunksPlugin to remove files instead of chunks
+        // new RemoveJunksPlugin(['index'])
       ],
 
       // Turn off performance hints during development because we don't do any

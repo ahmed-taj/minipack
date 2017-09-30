@@ -12,50 +12,37 @@ import { getEntryFiles } from './getEntryFiles'
  * Generates webpack entries based on directory contents
  * 
  * @param dir 
- * @return {Entry}
+ * @return {string[]}
  * @private
  */
-const makeEntries = (options: CompilerOptions): Entry => {
-  // The options we need
-  const { path, fs, dev = null } = options
-
+const makeEntries = ({ path, fs, dev = null }: CompilerOptions): string[] => {
   // NOTE: names are case-sensitive
-  const names = ['app', 'index', 'style']
-  const files = {}
-  const entries = {}
+  const entries = []
 
   // Our sudo entry loader :)
   const sudo = require.resolve('@glitchapp/sudo-entry')
 
-  // Get entry for each name
-  names.forEach(name => {
-    files[name] = getEntryFiles(name, path, fs)
-    if (files[name].length > 1) {
-      return new Error(`Multiple ${name}.[ext] entries found in '${path}' root`)
-    }
-
-    // Determine which bundles we need
-    if (files[name].length === 1) {
-      // tslint:disable:prefer-conditional-expression
-      if (name === 'app') {
-        entries[name] = [resolve(path, files[name].pop())]
-      } else {
-        // Use sudo-entry loader here to generate a suitable code dynamically
-        entries[name] = `${sudo}?include[]=${resolve(path, files[name].pop())}!`
-      }
-    }
-  })
-
-  // Setup dev server (if any)
+  // Setup dev server (if enabled)
   if (dev) {
-    // Where to put dev server string
-    const devPoint = 'app'
-    // Dev server string
-    const devServer = [`${dev.client}?${dev.url}`]
+    entries.push(`${dev.client}?${dev.url}`)
+  }
 
-    entries[devPoint] = entries[devPoint]
-      ? [...entries[devPoint], ...devServer]
-      : devServer
+  // NOTE: file names are case-sensitive
+  for (const name of ['app', 'index', 'style']) {
+    const files = getEntryFiles(name, path, fs)
+    if (files.length > 1) {
+      throw new Error(`Multiple ${name}.[ext] entries found in '${path}' root`)
+    }
+
+    // Add chunk files
+    if (files.length === 1) {
+      const file =
+        name === 'app'
+          ? resolve(path, files.pop())
+          : `${sudo}?include[]=${resolve(path, files.pop())}!`
+
+      entries.push(file)
+    }
   }
 
   return entries

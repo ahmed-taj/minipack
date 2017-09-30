@@ -6,61 +6,58 @@ import { makeEntries } from '../../src/utils/makeEntries'
 import { dir, fs, mapFalse, mapTrue } from '../helpers'
 
 test('makes nothing when no entries', t => {
-  t.deepEqual(makeEntries({ fs: fs(mapTrue([])), path: dir }), {})
+  t.deepEqual(makeEntries({ fs: fs(mapTrue([])), path: dir }), [])
 })
 
 test('makes `app`, `index` and `style` when possible', t => {
-  t.deepEqual(
-    Object.keys(
-      makeEntries({
-        fs: fs(mapTrue(['app.ext', 'index.ext', 'style.ext'])),
-        path: dir
-      })
-    ),
-    ['app', 'index', 'style']
+  t.is(
+    makeEntries({
+      fs: fs(mapTrue(['app.ext', 'index.ext', 'style.ext'])),
+      path: dir
+    }).length,
+    3
   )
 })
 
 test('only makes necessary entries', t => {
   // Only app.[ext]
-  t.deepEqual(
-    Object.keys(makeEntries({ path: dir, fs: fs(mapTrue(['app.ext'])) })),
-    ['app']
-  )
+  t.is(makeEntries({ path: dir, fs: fs(mapTrue(['app.ext'])) }).length, 1)
 
   // Only index.[ext]
-  t.deepEqual(
-    Object.keys(makeEntries({ path: dir, fs: fs(mapTrue(['index.ext'])) })),
-    ['index']
-  )
+  t.is(makeEntries({ path: dir, fs: fs(mapTrue(['index.ext'])) }).length, 1)
 
   // Only style.[ext]
-  t.deepEqual(
-    Object.keys(makeEntries({ path: dir, fs: fs(mapTrue(['style.ext'])) })),
-    ['style']
-  )
+  t.is(makeEntries({ path: dir, fs: fs(mapTrue(['style.ext'])) }).length, 1)
 
   // Both app.[ext] & index.[ext]
-  t.deepEqual(
-    Object.keys(
-      makeEntries({ path: dir, fs: fs(mapTrue(['app.ext', 'index.ext'])) })
-    ),
-    ['app', 'index']
+  t.is(
+    makeEntries({ path: dir, fs: fs(mapTrue(['app.ext', 'index.ext'])) })
+      .length,
+    2
   )
 
   // Both app.[ext] & style.[ext]
-  t.deepEqual(
-    Object.keys(
-      makeEntries({ path: dir, fs: fs(mapTrue(['app.ext', 'style.ext'])) })
-    ),
-    ['app', 'style']
+  t.is(
+    makeEntries({ path: dir, fs: fs(mapTrue(['app.ext', 'style.ext'])) })
+      .length,
+    2
   )
 
   // Both index.[ext] & style.[ext]
+  t.is(
+    makeEntries({ path: dir, fs: fs(mapTrue(['style.ext', 'index.ext'])) })
+      .length,
+    2
+  )
+})
+
+test('setups dev server', t => {
   t.deepEqual(
-    Object.keys(
-      makeEntries({ path: dir, fs: fs(mapTrue(['index.ext', 'style.ext'])) })
-    ),
-    ['index', 'style']
+    makeEntries({
+      dev: { client: 'myclient', url: 'example.com' },
+      fs: fs(mapTrue([])),
+      path: dir
+    }),
+    ['myclient?example.com']
   )
 })

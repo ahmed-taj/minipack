@@ -13,17 +13,3 @@ test('Configuration', t => {
 
   t.is(conf.context, dir)
 })
-
-test('setup dev server', t => {
-  const conf = new Config({
-    dev: {
-      client: 'myclient',
-      url: 'example.com'
-    },
-    fs: fs([]),
-    path: dir
-  }).generate()
-
-  // tslint:disable:no-string-literal
-  t.deepEqual(conf.entry['app'], ['myclient?example.com'])
-})
