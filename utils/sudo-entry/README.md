@@ -62,10 +62,6 @@ We value and appreciate your help, please read [CONTRIBUTING.md](../../CONTRIBUT
 $ npm test
 ```
 
-## Versioning
-
-We use [semantic-release](https://github.com/semantic-release/semantic-release) for release automation and follow [SemVer](http://semver.org/) guidelines
-
 ## License
 
 This project is licensed under the [MIT License](./LICENSE) terms

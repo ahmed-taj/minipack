@@ -52,10 +52,6 @@ We value and appreciate your help, please read [CONTRIBUTING.md](../CONTRIBUTING
 $ npm test
 ```
 
-## Versioning
-
-We use [semantic-release](https://github.com/semantic-release/semantic-release) for release automation and follow [SemVer](http://semver.org/) guidelines
-
 ## Acknowledgments
 
 Inspired by the awesome work of Facebook in their [create-react-app](https://github.com/facebookincubator/create-react-app) package.

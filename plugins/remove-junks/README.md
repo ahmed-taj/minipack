@@ -57,10 +57,6 @@ We value and appreciate your help, please read [CONTRIBUTING.md](../../CONTRIBUT
 $ npm test
 ```
 
-## Versioning
-
-We use [semantic-release](https://github.com/semantic-release/semantic-release) for release automation and follow [SemVer](http://semver.org/) guidelines
-
 ## Acknowledgments
 
 Inspired by the awesome work of Alex Lu in their [suppress-chunks-webpack-plugin](https://github.com/alxlu/suppress-chunks-webpack-plugin) webpack plugin.
