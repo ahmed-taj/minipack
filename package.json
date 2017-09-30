@@ -8,7 +8,7 @@
   },
   "scripts": {
     "commitmsg": "commitlint -e",
-    "lerna:publish": "lerna publish --conventional-commits",
+    "lerna:publish": "lerna publish -m 'chore: %s'",
     "lint": "lerna run lint",
     "lint:staged": "lint-staged",
     "format": "prettier --write --no-semi --single-quote './**/*.{ts,json}'",
