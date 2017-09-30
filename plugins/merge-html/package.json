@@ -1,6 +1,6 @@
 {
   "name": "@glitchapp/merge-html-plugin",
-  "version": "1.0.0-alpha.0",
+  "version": "1.0.0-alpha.1",
   "description": "Glitch - A plugin to enable injection of custom HTML string",
   "keywords": ["glitch-app", "webpack"],
   "license": "MIT",

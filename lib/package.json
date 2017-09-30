@@ -1,6 +1,6 @@
 {
   "name": "@glitchapp/lib",
-  "version": "1.0.0-alpha.0",
+  "version": "1.0.0-alpha.1",
   "description": "Glitch - the core Node.js module",
   "keywords": ["glitch-app", "webpack"],
   "license": "MIT",
@@ -18,9 +18,9 @@
     "test": "npm run prepare -s && ava ./dist/tests/**/*.test.js"
   },
   "dependencies": {
-    "@glitchapp/merge-html-plugin": "^1.0.0-alpha.0",
-    "@glitchapp/remove-junks-plugin": "^1.0.0-alpha.0",
-    "@glitchapp/sudo-entry": "^1.0.0-alpha.0",
+    "@glitchapp/merge-html-plugin": "^1.0.0-alpha.1",
+    "@glitchapp/remove-junks-plugin": "^1.0.0-alpha.1",
+    "@glitchapp/sudo-entry": "^1.0.0-alpha.1",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.0",

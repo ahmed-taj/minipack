@@ -1,6 +1,6 @@
 {
   "name": "@glitchapp/cli",
-  "version": "1.0.0-alpha.0",
+  "version": "1.0.0-alpha.1",
   "preferGlobal": true,
   "description": "Glitch - A command line interface for Glitch",
   "keywords": ["glitch-app", "webpack"],
@@ -38,7 +38,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@glitchapp/lib": "^1.0.0-alpha.0",
+    "@glitchapp/lib": "^1.0.0-alpha.1",
     "chalk": "^2.1.0",
     "find-up": "^2.1.0",
     "webpack": "^3.6.0",
