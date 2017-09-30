@@ -2,16 +2,10 @@
   "name": "@glitchapp/remove-junks-plugin",
   "version": "1.0.0-alpha.0",
   "description": "Glitch - A webpack plugin to remove junk chunk's files",
-  "keywords": [
-    "glitch-app",
-    "webpack"
-  ],
+  "keywords": ["glitch-app", "webpack"],
   "license": "MIT",
   "author": "Ahmed T. Ali <ah.tajelsir@gmail.com>",
-  "files": [
-    "dist/src",
-    "README.md"
-  ],
+  "files": ["dist/src", "README.md"],
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",
   "scripts": {

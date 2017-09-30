@@ -3,16 +3,10 @@
   "version": "1.0.0-alpha.0",
   "preferGlobal": true,
   "description": "Glitch - A command line interface for Glitch",
-  "keywords": [
-    "glitch-app",
-    "webpack"
-  ],
+  "keywords": ["glitch-app", "webpack"],
   "license": "MIT",
   "author": "Ahmed T. Ali <ah.tajelsir@gmail.com>",
-  "files": [
-    "dist/src/*",
-    "README.md"
-  ],
+  "files": ["dist/src/*", "README.md"],
   "bin": {
     "glitch": "./dist/src/index.js"
   },
