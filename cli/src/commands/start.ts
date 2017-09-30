@@ -26,10 +26,12 @@ const desc = 'Starts a dev server in the current path'
 // and returning a yargs instance
 const builder: CommandBuilder = {
   host: {
+    alias: 'h',
     default: '0.0.0.0',
     desc: 'The hostname'
   },
   port: {
+    alias: 'p',
     default: '8080',
     desc: 'The port number'
   }
