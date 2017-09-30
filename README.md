@@ -5,9 +5,16 @@
     src="./logo.svg">
   <h1>Glitch App</h1>
   <p>A webpack-based, local playground for the modern web technologies.</p>
-  <img src="https://img.shields.io/npm/v/@glitchapp/cli.svg?style=flat-square">
-  <img src="https://img.shields.io/travis/glitchapp/glitch.svg?style=flat-square">
-  <img src="https://img.shields.io/npm/l/@glitchapp/cli.svg?style=flat-square">
+  
+  <a href="https://npm.im/@glitchapp/cli">
+    <img src="https://img.shields.io/npm/v/@glitchapp/cli.svg?style=flat-square" >
+  </a>
+  <a href="https://travis-ci.org/glitchapp/glitch">
+    <img src="https://img.shields.io/travis/glitchapp/glitch.svg?style=flat-square" >
+  </a>
+  <a href="./LICENSE">
+    <img src="https://img.shields.io/npm/l/@glitchapp/cli.svg?style=flat-square">
+  </a>
 </div>
 
 
