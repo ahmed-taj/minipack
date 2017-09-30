@@ -32,7 +32,7 @@ const builder: CommandBuilder = {
   },
   port: {
     alias: 'p',
-    default: '8080',
+    default: '5000',
     desc: 'The port number'
   }
 }
