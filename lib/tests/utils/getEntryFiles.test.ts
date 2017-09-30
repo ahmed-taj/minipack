@@ -2,7 +2,7 @@
 import test from 'ava'
 
 // Ours
-import { getEntryFiles } from '../../src/utils/entry'
+import { getEntryFiles } from '../../src/utils/getEntryFiles'
 import { dir, fs, mapFalse, mapTrue } from '../helpers'
 
 const name = 'app'

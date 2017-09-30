@@ -2,7 +2,7 @@
 import test from 'ava'
 
 // Ours
-import { makeEntries } from '../../src/utils/entry'
+import { makeEntries } from '../../src/utils/makeEntries'
 import { dir, fs, mapFalse, mapTrue } from '../helpers'
 
 test('makes nothing when no entries', t => {

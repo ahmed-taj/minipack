@@ -11,7 +11,7 @@ import { Configuration, Entry } from 'webpack'
 
 // Ours
 import { CompilerOptions } from '../types/options'
-import { makeEntries } from '../utils/entry'
+import { makeEntries } from '../utils/makeEntries'
 import { BUILD_DIR, DEFAULT_PUBLIC_PATH, INDEX_TITLE } from './globals'
 import { CSS_RULES } from './support/css'
 import { HTML_RULES } from './support/html'

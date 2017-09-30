@@ -1,30 +1,12 @@
 // Native
-import { basename, dirname, extname, resolve } from 'path'
+import { resolve } from 'path'
 
 // Packages
 import { Entry } from 'webpack'
 
 // Ours
-import { FileSystem } from '../types/fs'
 import { CompilerOptions } from '../types/options'
-
-/**
- * Lookup suitable entry (name.*) file in a given directory
- * 
- * @param name 
- * @param dir 
- * @param fs 
- * @private
- */
-const getEntryFiles = (name: string, dir: string, fs: FileSystem): string[] => {
-  // We only care about name.* in the root dir
-  return fs.readdirSync(dir).filter(f => {
-    if (fs.statSync(resolve(dir, f)).isFile()) {
-      return basename(f, extname(f)) === name && dirname(f) === '.'
-    }
-    return false
-  })
-}
+import { getEntryFiles } from './getEntryFiles'
 
 /**
  * Generates webpack entries based on directory contents
@@ -79,4 +61,4 @@ const makeEntries = (options: CompilerOptions): Entry => {
   return entries
 }
 
-export { getEntryFiles, makeEntries }
+export { makeEntries }
