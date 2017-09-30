@@ -16,7 +16,7 @@ import { CompilerOptions } from '../types/options'
  * @param fs 
  * @private
  */
-const entry = (name: string, dir: string, fs: FileSystem): string[] => {
+const getEntryFiles = (name: string, dir: string, fs: FileSystem): string[] => {
   // We only care about name.* in the root dir
   return fs.readdirSync(dir).filter(f => {
     if (fs.statSync(resolve(dir, f)).isFile()) {
@@ -47,7 +47,7 @@ const makeEntries = (options: CompilerOptions): Entry => {
 
   // Get entry for each name
   names.forEach(name => {
-    files[name] = entry(name, path, fs)
+    files[name] = getEntryFiles(name, path, fs)
     if (files[name].length > 1) {
       return new Error(`Multiple ${name}.[ext] entries found in '${path}' root`)
     }
@@ -79,4 +79,4 @@ const makeEntries = (options: CompilerOptions): Entry => {
   return entries
 }
 
-export { entry, makeEntries }
+export { getEntryFiles, makeEntries }
