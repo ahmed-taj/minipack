@@ -1,0 +1,16 @@
+ruleset:
+  label_bug:
+    name: Label issues as bug when checked in GitHub template
+    events: issues
+    label: bug
+    when:
+      - action = "opened"
+      - body matches "/[\s*x\s*] bug/"
+
+  label_feature_requests:
+    name: Label issues as feature request when checked in GitHub template
+    events: issues
+    label: feature request
+    when:
+      - action = "opened"
+      - body matches "/[\s*x\s*] feature/"
