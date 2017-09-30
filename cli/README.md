@@ -10,7 +10,7 @@
 ## Installation
 
 ```sh
-$ npm install @glitchapp/cli
+$ npm install -g @glitchapp/cli
 ```
 
 ## Usage
@@ -19,7 +19,7 @@ $ npm install @glitchapp/cli
 Usage:  glitch [command] [options]
 
 Commands:
-  start [options]  Starts a live server in the current path         [aliases: s]
+  start [options]  Start a dev server in the current path
 
 Options:
   --version  Show version number                                       [boolean]
@@ -27,7 +27,6 @@ Options:
 
 If you have any problems, do not hesitate to file an issue:
   https://github.com/glitchapp/glitch/issues/new
-
 
 ```
 

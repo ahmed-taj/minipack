@@ -20,7 +20,7 @@ const aliases = []
 
 // String used as the description for the command in help text, use false for
 // a hidden command
-const desc = 'Starts a dev server in the current path'
+const desc = 'Start a dev server in the current path'
 
 // Object declaring the options the command accepts, or a function accepting
 // and returning a yargs instance

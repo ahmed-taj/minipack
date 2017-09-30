@@ -8,7 +8,7 @@ import { versions } from './utils/versions'
 
 // tslint:disable:no-unused-expression
 yargs
-  .usage(`Usage:  glb [command] [options]`)
+  .usage(`Usage:  glitch [command] [options]`)
   .version(versions())
   .commandDir('./commands')
   .epilogue(
