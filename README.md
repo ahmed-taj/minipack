@@ -1,14 +1,15 @@
-# Glitch App
-
-<center></center>
-
-[![npm (scoped)](https://img.shields.io/npm/v/@glitchapp/cli.svg?style=flat-square)]()
-[![Travis](https://img.shields.io/travis/glitchapp/glitch.svg?style=flat-square)]()
-[![npm](https://img.shields.io/npm/l/@glitchapp/cli.svg?style=flat-square)]()
-
 > **NOTE:** This project is currently in beta, if you find any issues feel to report it [here](https://github.com/glitchapp/glitch/issues)
 
-A webpack-based, local playground for the modern web technologies.
+<div align="center">
+  <img width="128" height="128"
+    src="./logo.svg">
+  <h1>Glitch App</h1>
+  <p>A webpack-based, local playground for the modern web technologies.</p>
+  <img src="https://img.shields.io/npm/v/@glitchapp/cli.svg?style=flat-square">
+  <img src="https://img.shields.io/travis/glitchapp/glitch.svg?style=flat-square">
+  <img src="https://img.shields.io/npm/l/@glitchapp/cli.svg?style=flat-square">
+</div>
+
 
 ## Installation
 
