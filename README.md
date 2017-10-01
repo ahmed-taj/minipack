@@ -1,4 +1,4 @@
-> **NOTE:** This project is currently in beta, if you find any issues feel to report it [here](https://github.com/glitchapp/glitch/issues)
+> **NOTE:** This project is currently in beta, if you find any issues please report it [here](https://github.com/glitchapp/glitch/issues)
 
 <div align="center">
   <img width="128" height="128"
