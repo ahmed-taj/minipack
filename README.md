@@ -87,6 +87,23 @@ We use the file extensions as a source of truth in order to determine whether we
 $ npm install -g @glitchapp/cli
 ```
 
+## Usage
+
+```
+Usage:  glitch [command] [options]
+
+Commands:
+  start [options]  Start a dev server in the current path
+
+Options:
+  --version  Show version number                                       [boolean]
+  --help     Show help                                                 [boolean]
+
+If you have any problems, do not hesitate to file an issue:
+  https://github.com/glitchapp/glitch/issues/new
+
+```
+
 ## Prerequisites
 
 * **Node.js:** v8.4.0 (or later)
