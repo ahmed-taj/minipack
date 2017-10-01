@@ -7,6 +7,8 @@
     "url": "https://github.com/glitchapp/glitch.git"
   },
   "scripts": {
+    "add-contrib": "all-contributors add",
+    "generate-contrib": "all-contributors generate",
     "commitmsg": "commitlint -e",
     "lerna:publish": "lerna publish -m 'chore: %s'",
     "lint": "lerna run lint",
@@ -27,6 +29,7 @@
     "@commitlint/cli": "^3.2.0",
     "@commitlint/config-angular": "^3.1.1",
     "@commitlint/config-lerna-scopes": "^3.1.1",
+    "all-contributors-cli": "^4.5.0",
     "commitizen": "^2.9.6",
     "conventional-github-releaser": "^1.1.12",
     "cz-conventional-changelog": "^2.0.0",

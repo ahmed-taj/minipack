@@ -99,11 +99,10 @@ already been submitted.
 ## Add yourself as a contributor
 
 This project follows the [all contributors](https://github.com/kentcdodds/all-contributors) specification. To add yourself to the
-table of contributors on the README.md, please use the automated script as part
-of your PR:
+table of contributors on README.md, please run:
 
 ```
-$ npm run add-contrib <YOUR_GITHUB_USERNAME>
+$ npm run add-contrib
 ```
 
 Follow the prompt. If you've already added yourself to the list and are making

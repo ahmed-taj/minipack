@@ -1,0 +1,27 @@
+{
+  "projectName": "glitch",
+  "projectOwner": "glitchapp",
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "ahmed-taj",
+      "name": "Ahmed T. Ali",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/12673605?v=4",
+      "profile": "https://github.com/ahmed-taj",
+      "contributions": [
+        "blog",
+        "code",
+        "design",
+        "doc",
+        "ideas",
+        "plugin",
+        "review",
+        "test"
+      ]
+    }
+  ]
+}
