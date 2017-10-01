@@ -132,6 +132,10 @@ This project would not have been possible without these great projects:
 * [webpack](https://webpack.js.org)
 * [webpack-dev-server](https://github.com/webpack/webpack-dev-server)
 
+## Legal
+
+This project is NOT affiliated with, funded, or in any way associated with [Fog Creek's Glitch](https://glitch.com) or [webpack](https://webpack.js.org)
+
 ## License
 
 This project is licensed under the [MIT License](./LICENSE) terms
