@@ -23,7 +23,7 @@
 
 ## How it works
 
-Internally, the app is just a set of [webpack] plugins/loaders. We use the same,
+Internally, the playground is just a set of [webpack](https://webpack.js.org) plugins/loaders. We use the same,
 good, official webpack-dev-server to serve the final JavaScript bundle.
 
 It works by walking through the current directory contents to determine suitable
@@ -42,7 +42,7 @@ Used to customize the HTML output (it will be transpiled if necessary).
 
 #### 2. app.[ext]:
 
-Used as start point for your JavaScript (it will be transpiled if necessary) 
+Used as a start point for your JavaScript (it will be transpiled if necessary) 
 code, you should import all your scripts here.
 
 **Example:**
@@ -54,7 +54,7 @@ console.log('Hello world');
 
 #### 3. style.[ext]:
 
-Used as start point for your stylesheets (it will be transpiled if necessary). 
+Used as a start point for your stylesheets (it will be transpiled if necessary). 
 You should import all your other styles here. Otherwise, you need import them in
 your `app.[ext]` as you would normally do when using webpack.
 
