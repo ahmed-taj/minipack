@@ -71,7 +71,7 @@ All of these files are optional.
 
 ### Extensions mapping
 
-We use the file extensions as a source of truth in order to determine whether we need to do translation or not.
+We use the file extensions as a source of truth in order to determine whether we need to perform transpilation or not.
 
 | Extensions    | Loader                                                        | Notes                                               |
 | :------------ | :------------------------------------------------------------ | :-------------------------------------------------- |
