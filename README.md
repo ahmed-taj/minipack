@@ -76,7 +76,7 @@ All of these files are optional.
 We use the file extensions as a source of truth in order to determine whether we need to do translation or not.
 
 | Extensions    | Loader                                                        | Description                                         |
-| :-----------: | :-----------------------------------------------------------: | :-------------------------------------------------: |
+| :------------ | :------------------------------------------------------------ | :-------------------------------------------------- |
 | **js,jsx,es** | [babel-loader](https://github.com/babel/babel-loader)         | using `preset-env` and `preset-react`               |
 | **html**      | [html-loader](https://github.com/webpack-contrib/html-loader) |                                                     |
 | **css**       | [css-loader](https://github.com/webpack-contrib/css-loader)   | In addition to `postcss-cssnext` and `autoprefixer` |
