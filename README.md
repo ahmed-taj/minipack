@@ -3,7 +3,7 @@
 <div align="center">
   <img width="128" height="128"
     src="./logo.svg">
-  <h1>Glitch App</h1>
+  <h1>Glitch Playground</h1>
   <p>A webpack-based, local playground for the modern web technologies.</p>
   
   <a href="https://npm.im/@glitchapp/cli">
@@ -23,11 +23,9 @@
 
 ## How it works
 
-Internally, the playground is just a set of [webpack](https://webpack.js.org) plugins/loaders. We use the same,
-good, official webpack-dev-server to serve the final JavaScript bundle.
+Internally, the playground is just a set of [webpack](https://webpack.js.org) plugins/loaders. We use the same, good, official webpack-dev-server to serve the final JavaScript bundle.
 
-It works by walking through the current directory contents to determine suitable
-entry point files for webpack. An entry point file can be:
+It works by walking through the current directory contents to determine suitable entry point files for webpack. An entry point file can be:
 
 #### 1. index.[ext]: 
 
