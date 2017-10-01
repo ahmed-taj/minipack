@@ -21,6 +21,66 @@
 </div>
 
 
+## How it works
+
+Internally, the app is just a set of [webpack] plugins/loaders. We use the same,
+good, official webpack-dev-server to serve the final JavaScript bundle.
+
+It works by walking through the current directory contents to determine suitable
+entry point files for webpack. An entry point file can be:
+
+#### 1. index.[ext]: 
+
+Used to customize the HTML output (it will be transpiled if necessary). 
+
+**Example:**
+
+```HTML
+<!-- index.html -->
+<div id="root"></div>
+```
+
+#### 2. app.[ext]:
+
+Used as start point for your JavaScript (it will be transpiled if necessary) 
+code, you should import all your scripts here.
+
+**Example:**
+
+```JavaScript
+// app.js
+console.log('Hello world');
+```
+
+#### 3. style.[ext]:
+
+Used as start point for your stylesheets (it will be transpiled if necessary). 
+You should import all your other styles here. Otherwise, you need import them in
+your `app.[ext]` as you would normally do when using webpack.
+
+**Example:**
+
+```CSS
+/* style.css */
+body {
+  color: green;
+}
+```
+
+You can think of these entry points as the HTML/CSS/JS tabs you would see in any
+online playground such as [Codepen](https://codepen.io), [JSFiddle](https://jsfiddle.net/).
+All of these files are optional.
+
+### Extensions mapping
+
+We use the file extensions as a source of truth in order to determine whether we need to do translation or not.
+
+| Extensions    | Loader                                                        | Description                                         |
+| :-----------: | :-----------------------------------------------------------: | :-------------------------------------------------: |
+| **js,jsx,es** | [babel-loader](https://github.com/babel/babel-loader)         | using `preset-env` and `preset-react`               |
+| **html**      | [html-loader](https://github.com/webpack-contrib/html-loader) |                                                     |
+| **css**       | [css-loader](https://github.com/webpack-contrib/css-loader)   | In addition to `postcss-cssnext` and `autoprefixer` |
+
 ## Installation
 
 ```sh
