@@ -1,4 +1,7 @@
-> **NOTE:** This project is currently in beta, if you find any issues please report it [here](https://github.com/glitchapp/glitch/issues)
+<a target='_blank' rel='nofollow' href='https://app.codesponsor.io/link/yF8xMRYKxBs3t9VeMWabeRrx/glitchapp/glitch'>
+  <img alt='Sponsor' width='888' height='68' src='https://app.codesponsor.io/embed/yF8xMRYKxBs3t9VeMWabeRrx/glitchapp/glitch.svg' />
+</a>
+
 
 <div align="center">
   <img width="128" height="128"
@@ -20,9 +23,8 @@
   </a>
 </div>
 
-<a target='_blank' rel='nofollow' href='https://app.codesponsor.io/link/yF8xMRYKxBs3t9VeMWabeRrx/glitchapp/glitch'>
-  <img alt='Sponsor' width='888' height='68' src='https://app.codesponsor.io/embed/yF8xMRYKxBs3t9VeMWabeRrx/glitchapp/glitch.svg' />
-</a>
+> **NOTE:** This project is currently in beta, if you find any issues please report it [here](https://github.com/glitchapp/glitch/issues)
+
 
 ## How it works
 
