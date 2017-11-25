@@ -5,16 +5,16 @@
   <p>A webpack-based, local playground for the modern web technologies.</p>
   
   <a href="https://npm.im/@glitchapp/cli">
-    <img src="https://img.shields.io/npm/v/@glitchapp/cli.svg?style=flat-square" >
+    <img src="https://img.shields.io/npm/v/minipack.svg?style=flat-square" >
   </a>
   <a href="https://travis-ci.org/glitchapp/glitch">
-    <img src="https://img.shields.io/travis/glitchapp/glitch.svg?style=flat-square" >
+    <img src="https://img.shields.io/travis/ahmed-taj/minipack.svg?style=flat-square" >
   </a>
   <a href="#contributors">
     <img src="https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square" >
   </a>
   <a href="./LICENSE">
-    <img src="https://img.shields.io/npm/l/@glitchapp/cli.svg?style=flat-square">
+    <img src="https://img.shields.io/npm/l/minipack.svg?style=flat-square">
   </a>
 </div>
 
@@ -82,13 +82,13 @@ We use the file extensions as a source of truth in order to determine whether we
 ## Installation
 
 ```sh
-$ npm install -g @glitchapp/cli
+$ npm install -g minipack
 ```
 
 ## Usage
 
 ```
-Usage:  glitch [command] [options]
+Usage:  mini [command] [options]
 
 Commands:
   start [options]  Start a dev server in the current path
