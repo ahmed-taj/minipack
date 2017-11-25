@@ -1,7 +1,7 @@
 <div align="center">
   <img width="128" height="128"
     src="./logo.svg">
-  <h1>Glitch Playground</h1>
+  <h1>Minipack</h1>
   <p>A webpack-based, local playground for the modern web technologies.</p>
   
   <a href="https://npm.im/@glitchapp/cli">
@@ -18,7 +18,7 @@
   </a>
 </div>
 
-> **NOTE:** This project is currently in beta, if you find any issues please report it [here](https://github.com/glitchapp/glitch/issues)
+> **NOTE:** This project is currently in beta, if you find any issues please report it [here](https://github.com/ahmed-taj/minipack/issues)
 
 
 ## How it works
@@ -131,10 +131,6 @@ This project would not have been possible without these great projects:
 * [Node.js](https://nodejs.org)
 * [webpack](https://webpack.js.org)
 * [webpack-dev-server](https://github.com/webpack/webpack-dev-server)
-
-## Legal
-
-This project is NOT affiliated with, funded, or in any way associated with [Fog Creek's Glitch](https://glitch.com) or [webpack](https://webpack.js.org)
 
 ## License
 
